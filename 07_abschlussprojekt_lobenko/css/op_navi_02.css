@@ -1,0 +1,41 @@
+@charset "utf-8";
+/* CSS Document für One Page Layout Navi fixed top */
+
+#wrapper{padding-top: 0;}
+
+#top_navigation{position: fixed;
+top:0;
+left:0;	
+background-color: rgba(104,164,245,1.00);
+width: 100%;
+padding: 0.625rem}/**/
+
+.navi_zentriert{background-color: rgba(205,217,5,1.00);
+max-width: 62.5rem ;   /*1000px / 16 = 62.5      */
+padding: 0.625rem;
+margin: auto;
+overflow: auto;}
+
+#top_navigation a{background-color: rgba(38,176,11,0.55);
+float: left;
+width:20%;
+padding: 0.625rem 0;	
+text-transform: uppercase;
+white-space: nowrap;	
+}
+
+#top_navigation a:hover{background-color: #001463;
+color:#fff;}
+
+section{padding-top: 5.5625rem;}
+
+@media (max-width:31.25rem){
+	
+	section{padding-top: 15.3125rem;}	
+	
+	#top_navigation a{float: none;
+	display:block;
+		width: auto;
+	}	
+	
+}

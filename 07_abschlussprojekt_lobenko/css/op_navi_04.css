@@ -1,0 +1,207 @@
+@charset "utf-8";
+/* CSS Document für One Page Layout Navi sticky top hero header*/
+
+		#wrapper{         padding-top: 0;
+				}
+
+		#top_navigation{background: linear-gradient(to left ,  #EECFBA, #C5DDE8);
+						position:-webkit-sticky;
+						position: sticky;
+						top:0;
+						left:0;	
+						background-color:#FFFFFF;
+						width: 100%;
+						padding: 0.625rem;
+						z-index: 100000;
+		
+					   }
+
+		.navi_zentriert{
+						max-width: 62.5rem ;   /*1000px / 16 = 62.5      */
+						padding: 0.625rem;
+						margin: auto;
+						overflow: auto;
+						}
+
+
+		#top_navigation a{/*background-color:rgba(0, 0, 0, .15);*/
+						float:left;
+						width:20%;
+						padding: 0.625rem 0;	
+						text-transform: uppercase;
+						white-space: nowrap;
+                        color: chocolate;
+                        text-align: center;	
+
+						}
+
+		#top_navigation a:hover{background-color:rgba(0, 0, 0, .15);
+						color:#fff;}
+
+		#navi_kurs{		list-style-type: none;
+						padding-left: 145px;}
+
+
+
+		.current{		font-weight: bold;}
+
+
+
+
+		#startseite{	background-image: url("../../05_dw_vorlagen_snow/img/tisch.jpg");
+		/*text-align:right;*/
+						padding-top: 0.625rem;
+						background-position: center;
+			height: 700px;
+			border:0.3125rem solid chocolate;
+						}
+		h1 {/*background-color: aliceblue;*/
+						font-size:4vw;
+						margin-top: 700px;
+						font-family: Satisfy ;
+						color: red;
+				
+						}
+		h4 {/*background-color: aliceblue;*/
+						font-size:8vw;
+						margin-top: 100px;
+						font-family: Satisfy ;
+						color: red;
+						text-align: center;	
+						}
+
+
+
+		.links{		  text-align: center;	}
+		
+
+		section{	  padding-top: 2.5625rem;}
+
+		@media     (  max-width:31.25rem){
+		section{ 	  padding-top: 10.3125rem;}	
+		#top_navigation a{float: none;
+								display:block;
+							width: auto;}	
+						}
+
+        .erste {
+					background-color: #FFFFFF;
+					padding: 30px 30px 20px;
+					padding: 1rem 1rem 1rem;/*3.284072%*/
+				}
+		.alles {
+					float:left;
+					width: 31.143952%;
+					margin: 0px 50px 50px 0;
+					margin: 50px 50px 0rem 6rem;
+					padding-top: 100px;
+
+					}
+
+
+		div{
+					border: 0;
+				    font: inherit;
+					font-style: inherit;
+					font-weight: inherit;
+					font-size: inherit;
+				    font-size: 100%;
+					margin: 0px ;
+					outline: 0;
+					padding: 0;
+					vertical-align: baseline;
+					}
+
+		#rezepte img {
+					vertical-align: top;
+					margin-bottom: 0.5rem;/* */}
+		img {
+					height: auto;
+					max-width: 100%;
+				}
+
+		#rezepte .en_title{
+					line-height: 1;
+
+					margin-bottom: 0rem;
+					font-size: 4px;
+					font-size: 1.4rem;
+
+				}
+		h3 {		clear: both;
+					border: 0;
+					font: inherit;
+					font-style: inherit;
+					font-weight: inherit;
+					font-size: inherit;
+					line-height: inherit;
+					font-family: inherit;
+					margin: 0;
+					margin-bottom: 0px;
+					outline: 0;
+					padding: 0;
+					vertical-align: baseline;
+			}
+
+
+		#rezepte p {
+					margin-bottom: 5px;
+					margin-bottom: 1.4rem;
+					font-size: 14px;
+					font-size: 1rem;
+				}
+		p {
+					color:#000000;
+					line-height: 1.2}
+
+		#rezepte a .link {
+					border: 1px solid #ECB9BA;
+				}
+		#rezepte a.link {
+					font-size: 14px;
+					font-size: 1.4rem;
+					border: 1px solid #6F2426;
+					border-radius: 4px;
+					color: #000000;
+					padding: 4px 10px;}
+
+
+				a	{text-decoration:none;
+					font: inherit;
+					font-style: inherit;
+					font-weight: inherit;
+					font-size: inherit;
+					font-size: 100%;
+					margin: 0;
+					outline: 0;
+					padding: 0;
+					vertical-align: baseline;}	
+
+			.name{  color:red;
+					text-align: center;}	
+
+		#rezepte {
+					text-align: center;
+					padding-bottom: 120px;
+					display: flex;
+					flex-direction: row;
+					flex-wrap: wrap;
+					padding-top: 40px;
+				}
+
+		#slid{		padding-top: 180px;
+					padding-bottom: 190px;}	
+
+		#mail{		padding-top: 110px;}
+		#wrapper{   padding-top: 10px;}
+
+		form { background: linear-gradient(to left ,  #EECFBA, #C5DDE8);
+		color: #A23123;}
+		button{background:  #FFFFFF;
+		color:#A23123;
+		border: 3rem rgba(0,0,0,1.00);}
+
+
+
+
+

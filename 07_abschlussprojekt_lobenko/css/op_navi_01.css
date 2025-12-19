@@ -1,0 +1,32 @@
+@charset "utf-8";
+/* CSS Document onePage Layout Variante 01 */
+
+#top_navigation{margin-bottom: 0.625rem;
+
+/* linksbündig*/
+	text-align: left;
+/* rechtsbündig*/
+	text-align: right;
+/* zentriert*/
+	text-align:center;
+}
+
+#top_navigation a{background-color: rgba(38,176,11,0.55);
+float: left;
+width:20%;
+padding: 0.625rem 0;	
+text-transform: uppercase;
+white-space: nowrap;	
+}
+
+#top_navigation a:hover{background-color: #001463;
+color:#fff;}
+
+
+@media (max-width:31.25rem){
+	#top_navigation a{float: none;
+	display:block;
+		width: auto;
+	}	
+	
+}

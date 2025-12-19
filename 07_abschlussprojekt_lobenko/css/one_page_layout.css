@@ -1,0 +1,58 @@
+@charset "utf-8";
+/* CSS Document für das Beispiel One Page Layout Portfolio */
+
+*{box-sizing: border-box;}
+
+body{font-family:"Trebuchet MS", Verdana, sans-serif;
+font-size: 100%;
+margin: 0;
+}
+
+#wrapper{/*background-color:mistyrose;*/
+background: linear-gradient(to top left, powderblue, pink);
+
+ max-width: 62.5rem ;   /*1000px / 16 = 62.5      */
+padding: 0.625rem;
+margin: auto;
+}
+
+#top_navigation{background-color: rgba(84,181,6,0.0);}
+
+#top_navigation ul{margin-top: 0;}
+
+ul, h1, h2, h3{margin: 0px;/**/
+background-color: rgba(60,177,233,0.0);
+	float:inherit;
+}
+
+section{background-color: rgba(84,181,6,0.0);
+padding: 0.625rem;
+min-height: 500px; /* Diese Angabe dient der visualisierung der leeren Container*/
+margin-bottom: 0.625rem;}
+
+section:nth-last-of-type(1){margin-bottom: 37.5rem;}
+
+#ill, #lay, #ani{background-color: rgba(60,177,233,0.0);
+min-height:18.75rem;  /* entspricht 300px */
+margin-bottom: 0.625rem;}
+
+#arbeiten article:nth-last-of-type(1){margin-bottom: 0;}
+
+
+.btt{background: linear-gradient(to left ,  #EECFBA, #C5DDE8);
+position: fixed;
+bottom: 0.625rem;
+right: 0.625rem;
+display: block;
+width: 5rem;
+height: 5rem;
+padding-top: 0.9375rem;	
+border:0.3125rem solid chocolate;	
+border-radius: 50%;
+text-align: center;
+transform: rotate(-10deg);
+color: #A32123;
+z-index: 100000;}
+.btt:hover{border-color:#DFB845;}
+
+
