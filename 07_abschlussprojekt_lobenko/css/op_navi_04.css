@@ -48,7 +48,7 @@
 
 
 
-		#startseite{	background-image:   url("05_dw_vorlagen_snow");
+		#startseite{	background-image:   url("../img/FR_gross.jpg");
 }
 		/*text-align:right;*/
 						padding-top: 0.625rem;
@@ -201,6 +201,7 @@
 		button{background:  #FFFFFF;
 		color:#A23123;
 		border: 3rem rgba(0,0,0,1.00);}
+
 
 
 
