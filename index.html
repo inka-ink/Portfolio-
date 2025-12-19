@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio Web Developer | Junior Frontend & AE</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: #1c1c1c; /* dunkel, fast schwarz */
+      color: #e0e0e0;
+      line-height: 1.6;
+    }
+    header {
+      padding: 60px 20px;
+      text-align: center;
+      background: #2a2a2a;
+    }
+    header h1 {
+      font-size: 2.4rem;
+      color: #d4af37; /* goldener Akzent */
+      margin-bottom: 10px;
+    }
+    header p {
+      font-size: 1.1rem;
+      color: #ccc;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      padding: 12px;
+      background: #1a1a1a;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    nav button {
+      background: transparent;
+      border: 1px solid #d4af37;
+      color: #d4af37;
+      padding: 6px 14px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+    nav button.active, nav button:hover {
+      background: #d4af37;
+      color: #1c1c1c;
+    }
+
+    .projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.project {
+  background: #1c1c1c;
+  border-radius: 20px;
+  border: 1px solid #444;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  cursor: pointer;
+}
+
+.project:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 22px 50px rgba(0,0,0,0.55);
+}
+
+/* контейнер картинки */
+.project a {
+  display: block;
+  position: relative;
+  overflow: hidden;
+}
+
+/* сама картинка */
+.project img {
+  object-position: center top;
+  width: 100%;
+  height: 360px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+/* лёгкий зум при наведении */
+.project:hover img {
+  transform: scale(1.07);
+}
+
+/* затемнение снизу (дорого выглядит) */
+.project a::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0) 45%,
+    rgba(0,0,0,0.65) 100%
+  );
+  pointer-events: none;
+}
+
+.project div {
+  padding: 18px 20px 22px;
+}
+
+.project h3 {
+  margin-bottom: 8px;
+  color: #fff;
+}
+
+.project p {
+  color: #ccc;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+.CardsContainer {
+    margin-top: 50px; /* расстояние от верхнего блока */
+
+}
+.CardOverlay {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0));
+  color: #fff;
+  padding: 15px 12px;
+  box-sizing: border-box;
+}
+
+.CardOverlay h3 {
+  margin: 0 0 6px 0;
+  font-size: 1.1rem;
+}
+
+.CardOverlay p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+.project {
+  position: relative;
+  display: block;
+  width: 280px;
+  height: 460px; /* высота карточки */
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  cursor: pointer;
+  text-decoration: none;
+  color: #d4af37; /* желтый цвет текста */
+  background:  #2a2a2a; /* красивый градиент */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.project:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 22px 50px rgba(0,0,0,0.55);
+}
+
+.CardOverlay h3 {
+  margin: 0;
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #ffd700; /* ярко-жёлтый текст */
+  text-align: center;
+}
+
+
+.project:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+}
+
+.CardContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* название сверху, описание снизу */
+  align-items: center;
+  text-align: center;
+  height: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+
+/* Название всегда видно */
+.CardContent h3 {
+  margin-top: 150px;   /* чтобы всегда сверху */
+  margin-bottom: 0;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #ffd700;
+  text-align: center;
+  z-index: 2;
+}
+
+/* Описание скрыто по умолчанию */
+.CardContent p {
+  color: #fff;
+  font-size: 0.9rem;
+  text-align: center;
+   margin: 10;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+/* Описание появляется при наведении */
+.project:hover .CardContent p {
+  opacity: 1;
+}
+
+.ProjectTitle {
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.ProjectTitle::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0%;
+  height: 2px;
+  background-color: #ffd700; /* желтый цвет */
+  transition: width 0.3s ease;
+}
+
+/* <-- вот эта строка изменена -->
+   раньше было .ProjectTitle:hover::after, теперь .project:hover .ProjectTitle::after */
+.project:hover .ProjectTitle::after {
+  width: 60%; 
+}
+.CardLinkLabel {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.75rem;
+  color: #ffd700; /* желтый */
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  pointer-events: none; /* чтобы не мешало клику */
+}
+
+
+
+
+    section { max-width: 1100px; margin: 50px auto; padding: 0 20px; }
+    a {text-decoration: none;color: #d4af37 ;}
+    .card { background: #2a2a2a; border-radius: 16px; padding: 30px; margin-bottom: 30px; border: 1px solid #444; }
+    h2 { color: #d4af37; margin-bottom: 15px; font-size: 1.8rem; }
+    .skills ul { list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; }
+    .skills li { background: #1c1c1c; padding: 12px; border-radius: 10px; border: 1px solid #444; }
+    footer { text-align: center; padding: 30px 20px; color: #888; font-size: 0.9rem; }
+    @media(max-width:600px){header h1{font-size:1.8rem;}}
+  </style>
+</head>
+<body>
+<header>
+  <h1 data-lang="title">Junior Frontend Developer</h1>
+  <p data-lang="subtitle">HTML • CSS • JavaScript • Application Development</p>
+</header>
+<nav>
+  <button onclick="setLang('de')" class="active">DE</button>
+  <button onclick="setLang('en')">EN</button>
+  <button onclick="setLang('ru')">RU</button>
+</nav>
+<section>
+  <div class="card">
+    <h2 data-lang="about_title">Über mich</h2>
+    <p data-lang="about_text">
+      Ich erstelle seit einiger Zeit eigenständig Websites als persönliche Übungsprojekte. Alle hier gezeigten Websites habe ich alleine entwickelt — von der Planung über Design bis zur Umsetzung. Meine Projekte reichen von der ukrainischen Küche (2020) über russische Rezepte bis hin zu Hand-Made und Make-Up Websites. Mein Ziel ist es, als Junior Frontend Developer praktische Erfahrung zu sammeln, meine Fähigkeiten zu erweitern und in einem professionellen Team zu arbeiten. Ich bin motiviert, schnell zu lernen, kreativ und genau.
+    </p>
+  </div>
+
+  <div class="card skills">
+    <h2 data-lang="skills_title">Technische Fähigkeiten</h2>
+    <ul>
+      <li>HTML5 / CSS3 / Responsive Design</li>
+      <li>Flexbox / Grid Layout</li>
+      <li>JavaScript (DOM, Events)</li>
+      <li>Git & GitHub</li>
+      <li>UX/UI Grundlagen</li>
+      <li>Mehrsprachige Websites (DE / EN / RU)</li>
+      <li>Semantic HTML</li>
+      <li>CSS Animations & Transitions </li>
+      <li>Accessibility Basics (a11y) </li>
+      <li>Project Structuring</li>
+    </ul>
+  </div>
+
+
+  <div class="projects-grid">
+
+ <a href="https://inka-ink.github.io/Rezepte/" class="project" target="_blank">
+  <div class="CardContent">
+    <span class="CardLinkLabel" data-lang="goto_site"> Zur Website</span>
+
+    <h3 class="ProjectTitle">Ukrainische Küche (2019)</h3>
+    <p data-lang="project1">
+      Eigenständiges Lernprojekt 2019, bei dem Rezepte und Bilder der ukrainischen Küche online präsentiert wurden.
+    </p>
+  </div>
+</a>
+
+<a href="Vse-svyazano-/index.html" class="project" target="_blank">
+  <div class="CardContent">
+    <span class="CardLinkLabel" data-lang="goto_site"> Zur Website</span>
+
+    <h3 class="ProjectTitle">Hand-Made Website</h3>
+    <p data-lang="project3">
+      Eigenständig erstelltes Online-Portfolio für Hand-Made Produkte mit Fokus auf Responsive Design.
+    </p>
+  </div>
+</a>
+
+<a href="make app 3/index.html" class="project" target="_blank">
+  <div class="CardContent">
+    <span class="CardLinkLabel" data-lang="goto_site"> Zur Website</span>
+
+    <h3 class="ProjectTitle">Make-Up Website</h3>
+    <p data-lang="project4">
+      Persönliches Übungsprojekt für eine moderne und responsive Kosmetik-Website.
+    </p>
+  </div>
+</a>
+
+
+</div>
+
+    <div class="CardsContainer">   
+  <div class="card">
+    <h2 data-lang="contact_title">Kontakt:</h2>
+    <p>Inna Lobenko</p>
+    <p>Email: <a href="mailto:lobenko31@gmail.com">lobenko31@gmail.com</a></p> 
+    <p>GitHub: https://github.com/inka-inkn</p>
+  </div>
+</div>
+
+</section>
+<footer>© 2025 Web Developer Inna Lobenko</footer>
+<script>
+  const t = {
+    de:{title:'Junior Frontend Developer',subtitle:'HTML • CSS • JavaScript • Application Development',about_title:'Über mich',about_text:'Ich erstelle seit einiger Zeit eigenständig Websites als persönliche Übungsprojekte. Alle hier gezeigten Websites habe ich alleine entwickelt — von der Planung über Design bis zur Umsetzung. Meine Projekte reichen von der ukrainischen Küche (2020) über russische Rezepte bis hin zu Hand-Made und Make-Up Websites. Mein Ziel ist es, als Junior Frontend Developer praktische Erfahrung zu sammeln, meine Fähigkeiten zu erweitern und in einem professionellen Team zu arbeiten. Ich bin motiviert, schnell zu lernen, kreativ und genau.',skills_title:'Technische Fähigkeiten',projects_title:'Projekte',project1:'Eigenständiges Lernprojekt 2020, bei dem Rezepte und Bilder der ukrainischen Küche online präsentiert wurden. Alles von mir umgesetzt: Design, HTML, CSS, Struktur. Dies war mein erster Projektversuch, daher einfach gestaltet, aber seitdem habe ich mich deutlich verbessert.',project2:'Eigenständiges Projekt für russische Rezepte. Alles selbst gemacht: Layout, Struktur und responsive Design. Zeigt meinen Fortschritt seit 2020.',project3:'Eigenständig erstelltes Online-Portfolio für Hand-Made Produkte. Fokus auf responsive Design, Bildgalerien und Nutzerfreundlichkeit.',project4:'Persönliches Übungsprojekt für eine Kosmetik-Website. Alle Inhalte und das Layout selbst erstellt. Modern und responsive.',contact_title:'Kontakt',  goto_site: 'Zur Website',},
+    en:{title:'Junior Frontend Developer',subtitle:'HTML • CSS • JavaScript • Application Development',about_title:'About Me',about_text:'I have been independently developing websites as personal practice projects. All the websites shown here were created by me alone — from planning to design and implementation. My projects include Ukrainian cuisine (2020), Russian recipes, Hand-Made and Make-Up websites. My goal is to gain practical experience as a Junior Frontend Developer, improve my skills, and work in a professional team. I am motivated, eager to learn quickly, creative, and precise.',skills_title:'Technical Skills',projects_title:'Projects',project1:'Independent learning project from 2020 presenting recipes and images of Ukrainian cuisine online. Everything was done by me: design, HTML, CSS, structure. This was my very first project, so it is quite simple, but since then I have improved significantly.',project2:'Independent project for Russian recipes. Everything done by me: layout, structure, responsive design. Shows my progress since 2020.',project3:'Independently created online portfolio for Hand-Made products. Focus on responsive design, image galleries, and user-friendliness.',project4:'Personal practice project for a cosmetics website. All content and layout created by me. Modern and responsive.',contact_title:'Contact',goto_site: 'Visit website'
+ },    
+    ru:{title:'Junior Frontend Developer',subtitle:'HTML • CSS • JavaScript • Разработка ПО',about_title:'Обо мне',about_text:'Я самостоятельно создаю сайты в качестве личных учебных проектов. Все представленные здесь сайты сделаны мной полностью одна — от планирования до дизайна и реализации. Среди проектов: украинская кухня (2020), русские рецепты, Hand-Made и Make-Up сайты. Моя цель — получить практический опыт как Junior Frontend Developer, развивать навыки и работать в профессиональной команде. Я мотивирована, быстро учусь, креативна и внимательна к деталям.',skills_title:'Навыки',projects_title:'Проекты',project1:'Самостоятельный учебный проект 2020 года, где онлайн представлены рецепты и изображения украинской кухни. Всё сделано мной: дизайн, HTML, CSS, структура. Это был мой первый проект, поэтому он достаточно простой, но с тех пор я значительно улучшилась.',project2:'Самостоятельный проект по русским рецептам. Всё сделано мной: макет, структура и адаптивный дизайн. Показывает прогресс с 2020 года.',project3:'Самостоятельно созданное онлайн-портфолио для hand-made изделий. Фокус на адаптивном дизайне, галереях изображений и удобстве для пользователя.',project4:'Личный учебный проект для сайта о косметике. Все содержимое и дизайн созданы мной. Адаптивный и современный.',contact_title:'Контакты', goto_site: 'Перейти на сайт',}
+  };
+  function setLang(lang){document.querySelectorAll('[data-lang]').forEach(el=>{el.textContent=t[lang][el.dataset.lang];});document.querySelectorAll('nav button').forEach(b=>b.classList.remove('active'));event.target.classList.add('active');}
+</script>
+</body>
+</html>
