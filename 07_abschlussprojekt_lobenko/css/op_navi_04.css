@@ -1,209 +1,227 @@
 @charset "utf-8";
-/* CSS Document für One Page Layout Navi sticky top hero header*/
 
-		#wrapper{         padding-top: 0;
-				}
+/* =========================
+   Общие стили
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-		#top_navigation{background: linear-gradient(to left ,  #EECFBA, #C5DDE8);
-						position:-webkit-sticky;
-						position: sticky;
-						top:0;
-						left:0;	
-						background-color:#FFFFFF;
-						width: 100%;
-						padding: 0.625rem;
-						z-index: 100000;
-		
-					   }
+body {
+    font-family: Arial, sans-serif;
+    color: #000;
+    line-height: 1.4;
+}
 
-		.navi_zentriert{
-						max-width: 62.5rem ;   /*1000px / 16 = 62.5      */
-						padding: 0.625rem;
-						margin: auto;
-						overflow: auto;
-						}
+#wrapper {
+    padding-top: 0;
+}
 
+/* =========================
+   Навигация
+========================= */
+#top_navigation {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background: linear-gradient(to left, #EECFBA, #C5DDE8);
+    z-index: 1000;
+    padding: 0.625rem 0;
+}
 
-		#top_navigation a{/*background-color:rgba(0, 0, 0, .15);*/
-						float:left;
-						width:20%;
-						padding: 0.625rem 0;	
-						text-transform: uppercase;
-						white-space: nowrap;
-                        color: chocolate;
-                        text-align: center;	
+.navi_zentriert {
+    max-width: 1000px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+}
 
-						}
+#top_navigation a {
+    flex: 1;
+    text-align: center;
+    padding: 0.625rem 0;
+    text-transform: uppercase;
+    color: chocolate;
+    text-decoration: none;
+    transition: 0.3s;
+}
 
-		#top_navigation a:hover{background-color:rgba(0, 0, 0, .15);
-						color:#fff;}
+#top_navigation a:hover,
+.current {
+    color: #fff;
+    background-color: rgba(0,0,0,0.15);
+}
 
-		#navi_kurs{		list-style-type: none;
-						padding-left: 145px;}
+/* =========================
+   Слайдер
+========================= */
+#slid {
+    padding: 180px 0 190px 0;
+}
 
+.nivoSlider {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    height: 500px;
+}
 
+.nivoSlider img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 
-		.current{		font-weight: bold;}
+/* =========================
+   Раздел "Rezepte"
+========================= */
+#rezepte {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    padding: 40px 0 120px 0;
+}
 
+.recipe-card, .alles {
+    background-color: #fff;
+    padding: 1rem;
+    width: 300px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
 
+.recipe-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin-bottom: 0.5rem;
+}
 
+.recipe-card h3 {
+    font-size: 1.2rem;
+    margin: 0.5rem 0;
+    color: red;
+}
 
+.recipe-card p {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
 
+.recipe-card a.read-more {
+    display: inline-block;
+    padding: 0.4rem 1rem;
+    border: 1px solid #6F2426;
+    border-radius: 4px;
+    color: #000;
+    text-decoration: none;
+    transition: 0.3s;
+}
 
-		h1 {/*background-color: aliceblue;*/
-						font-size:4vw;
-					
-						font-family: Satisfy ;
-						color: red;
-				
-						}
-		h4 {/*background-color: aliceblue;*/
-						font-size:8vw;
-						margin-top: 100px;
-						font-family: Satisfy ;
-						color: red;
-						text-align: center;	
-						}
+.recipe-card a.read-more:hover {
+    background-color: #ECB9BA;
+    color: #fff;
+}
 
+/* =========================
+   Раздел "Newsletter"
+========================= */
+#mail {
+    padding: 110px 20px;
+    text-align: center;
+}
 
+#mail form {
+    display: inline-block;
+    max-width: 500px;
+    width: 100%;
+    background: linear-gradient(to left ,  #EECFBA, #C5DDE8);
+    padding: 1.5rem;
+    border-radius: 8px;
+    color: #A23123;
+}
 
-		.links{		  text-align: center;	}
-		
+#mail label {
+    display: block;
+    margin-bottom: 0.5rem;
+    text-align: left;
+}
 
-		section{	  padding-top: 2.5625rem;}
+#mail input, #mail select, #mail textarea {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+}
 
-		@media     (  max-width:31.25rem){
-		section{ 	  padding-top: 10.3125rem;}	
-		#top_navigation a{float: none;
-								display:block;
-							width: auto;}	
-						}
+#mail button {
+    background: #fff;
+    color: #A23123;
+    padding: 0.5rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.3s;
+}
 
-        .erste {
-					background-color: #FFFFFF;
-					padding: 30px 30px 20px;
-					padding: 1rem 1rem 1rem;/*3.284072%*/
-				}
-		.alles {
-					float:left;
-					width: 31.143952%;
-					margin: 0px 50px 50px 0;
-					margin: 50px 50px 0rem 6rem;
-					padding-top: 100px;
+#mail button:hover {
+    background: #A23123;
+    color: #fff;
+}
 
-					}
+/* =========================
+   Кнопка Back to Top
+========================= */
+.btt {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 0.5rem 1rem;
+    background: #368264;
+    color: #fff;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
 
+.btt:hover {
+    background: #419a74;
+}
 
-		div{
-					border: 0;
-				    font: inherit;
-					font-style: inherit;
-					font-weight: inherit;
-					font-size: inherit;
-				    font-size: 100%;
-					margin: 0px ;
-					outline: 0;
-					padding: 0;
-					vertical-align: baseline;
-					}
+/* =========================
+   Адаптивность
+========================= */
+@media (max-width: 768px) {
+    #top_navigation a {
+        flex: none;
+        display: block;
+        width: 100%;
+    }
 
-		#rezepte img {
-					vertical-align: top;
-					margin-bottom: 0.5rem;/* */}
-		img {
-					height: auto;
-					max-width: 100%;
-				}
+    #rezepte {
+        flex-direction: column;
+        padding: 20px 0;
+    }
 
-		#rezepte .en_title{
-					line-height: 1;
+    .recipe-card, .alles {
+        width: 90%;
+        margin: auto;
+    }
 
-					margin-bottom: 0rem;
-					font-size: 4px;
-					font-size: 1.4rem;
+    #slid {
+        padding-top: 120px;
+        padding-bottom: 120px;
+    }
 
-				}
-		h3 {		clear: both;
-					border: 0;
-					font: inherit;
-					font-style: inherit;
-					font-weight: inherit;
-					font-size: inherit;
-					line-height: inherit;
-					font-family: inherit;
-					margin: 0;
-					margin-bottom: 0px;
-					outline: 0;
-					padding: 0;
-					vertical-align: baseline;
-			}
-
-
-		#rezepte p {
-					margin-bottom: 5px;
-					margin-bottom: 1.4rem;
-					font-size: 14px;
-					font-size: 1rem;
-				}
-		p {
-					color:#000000;
-					line-height: 1.2}
-
-		#rezepte a .link {
-					border: 1px solid #ECB9BA;
-				}
-		#rezepte a.link {
-					font-size: 14px;
-					font-size: 1.4rem;
-					border: 1px solid #6F2426;
-					border-radius: 4px;
-					color: #000000;
-					padding: 4px 10px;}
-
-
-				a	{text-decoration:none;
-					font: inherit;
-					font-style: inherit;
-					font-weight: inherit;
-					font-size: inherit;
-					font-size: 100%;
-					margin: 0;
-					outline: 0;
-					padding: 0;
-					vertical-align: baseline;}	
-
-			.name{  color:red;
-					text-align: center;}	
-
-		#rezepte {
-					text-align: center;
-					padding-bottom: 120px;
-					display: flex;
-					flex-direction: row;
-					flex-wrap: wrap;
-					padding-top: 40px;
-				}
-
-		#slid{		padding-top: 180px;
-					padding-bottom: 190px;}	
-
-		#mail{		padding-top: 110px;}
-		#wrapper{   padding-top: 10px;}
-
-		form { background: linear-gradient(to left ,  #EECFBA, #C5DDE8);
-		color: #A23123;}
-		button{background:  #FFFFFF;
-		color:#A23123;
-		border: 3rem rgba(0,0,0,1.00);}
-
-
-
-
-
-
-
-
-
-
-
-
+    #mail {
+        padding-top: 60px;
+    }
+}
