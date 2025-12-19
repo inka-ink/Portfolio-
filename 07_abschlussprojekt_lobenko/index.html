@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>Ukrainische Küche – Inna Lobenko</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+/* --- Сброс и базовые стили --- */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family:"Trebuchet MS", Verdana, sans-serif; background: linear-gradient(to top left, powderblue, pink); }
+
+/* --- Навигация --- */
+#top_navigation {
+  position: sticky; top: 0; width: 100%;
+  background: linear-gradient(to left, #EECFBA, #C5DDE8);
+  z-index: 1000; padding: 0.625rem 0;
+}
+.navi_zentriert { max-width: 1000px; margin: auto; display: flex; justify-content: center; }
+#top_navigation a {
+  flex: 1; text-align: center; padding: 0.625rem 0;
+  text-transform: uppercase; color: chocolate; text-decoration: none;
+}
+#top_navigation a:hover, #top_navigation a.current {
+  color: #fff; background-color: rgba(0,0,0,0.15);
+}
+
+/* --- Слайдер --- */
+#slid { padding: 120px 0; text-align: center; position: relative; }
+#slider { max-width: 1200px; margin: auto; position: relative; height: 300px; overflow: hidden; }
+#slider img {
+  width: 100%; height: 100%; object-fit: cover; position: absolute;
+  top: 0; left: 0; opacity: 0; transition: opacity 0.5s ease-in-out;
+}
+#slider img.active { opacity: 1; }
+
+/* --- Адаптивность --- */
+@media (max-width: 768px) {
+  #slider { height: 200px; }
+  #slid { padding-top: 80px; padding-bottom: 80px; }
+}
+
+
+/* --- Рецепты --- */
+#rezepte {
+  display: flex; flex-wrap: wrap; justify-content: center;
+  gap: 2rem; padding: 40px 20px 120px;
+}
+.recipe-card {
+  background: #fff; padding: 1rem; width: 300px;
+  text-align: center; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+.recipe-card img { width: 100%; height: auto; border-radius: 4px; margin-bottom: 0.5rem; }
+.recipe-card h3 { font-size: 1.2rem; margin: 0.5rem 0; color: red; }
+.recipe-card p { font-size: 1rem; margin-bottom: 0.5rem; }
+.recipe-card a.read-more {
+  display: inline-block; padding: 0.4rem 1rem;
+  border: 1px solid #6F2426; border-radius: 4px; color: #000; text-decoration: none;
+}
+.recipe-card a.read-more:hover { background-color: #ECB9BA; color: #fff; }
+
+/* --- Форма подписки --- */
+#mail { padding: 110px 20px; text-align: center; }
+#mail form {
+  display: inline-block; max-width: 500px; width: 100%;
+  background: linear-gradient(to left ,  #EECFBA, #C5DDE8);
+  padding: 1.5rem; border-radius: 8px; color: #A23123;
+}
+#mail label { display: block; margin-bottom: 0.5rem; text-align: left; }
+#mail input, #mail select, #mail textarea {
+  width: 100%; padding: 0.5rem; margin-bottom: 1rem; border-radius: 4px; border: 1px solid #ccc; font-size: 1rem;
+}
+#mail button {
+  background: #fff; color: #A23123; padding: 0.5rem 1.5rem; border: none; border-radius: 4px; cursor: pointer;
+}
+#mail button:hover { background: #A23123; color: #fff; }
+
+/* --- Back to Top --- */
+.btt {
+  background-color: rgba(216,190,112,0.83); position: fixed;
+  bottom: 0.625rem; right: 0.625rem; display: block;
+  width: 5rem; height: 5rem; padding-top: 0.9375rem;
+  border:0.3125rem solid #000; border-radius: 50%;
+  text-align: center; transform: rotate(-10deg); color: #000;
+  text-decoration: none; font-weight: bold; z-index: 1000;
+}
+.btt:hover { border-color: rgba(213,138,63,1.00); }
+
+/* --- Адаптивность --- */
+@media (max-width: 768px) {
+  #top_navigation a { flex: none; display: block; width: 100%; }
+  #rezepte { flex-direction: column; padding: 20px 0; }
+  .recipe-card { width: 90%; margin: auto; }
+  #slid { padding-top: 120px; padding-bottom: 120px; height: auto; }
+  #mail { padding-top: 60px; }
+}
+</style>
+</head>
+<body id="top">
+
+<div id="wrapper">
+
+<!-- Навигация -->
+<nav id="top_navigation">
+  <div class="navi_zentriert">
+    <a href="#slid" class="current">Slideshow</a>
+    <a href="#rezepte">Rezepte</a>
+    <a href="#mail">Email</a>
+  </div>
+</nav>
+
+<!-- Слайдер -->
+<section id="slid">
+  <h2>Slideshow</h2>
+  <div id="slider">
+      <img src="img/sleid11.jpg" alt="Borsch" class="active">
+      <img src="img/sleid2.jpg" alt="Wareniki">
+      <img src="img/sleid3.jpg" alt="Wareniki">
+  </div>
+</section>
+
+<!-- Рецепты -->
+<section id="rezepte">
+  <div class="recipe-card">
+    <img src="img/borsch.jpg" alt="Borsch mit Pampuschki">
+    <h3><a href="borsch.html">Borsch mit Pampuschki</a></h3>
+    <p>Heute gibt es Borschtsch mit Pampuschki, ein typisches ukrainisches Gericht...</p>
+    <a href="borsch.html" class="read-more">weiterlesen</a>
+  </div>
+  <div class="recipe-card">
+    <img src="img/war.jpg" alt="Wareniki mit Kirsche">
+    <h3><a href="wariniki.html">Wareniki mit Kirsche</a></h3>
+    <p>Wareniki ist traditionelle ukrainisches Gericht nach Sommer Schmecken ...</p>
+    <a href="wariniki.html" class="read-more">weiterlesen</a>
+  </div>
+  <div class="recipe-card">
+    <img src="img/banosch.jpg" alt="Banosch mit Schafskäse und Speck">
+    <h3><a href="banosch.html">Banosch mit Schafskäse und Speck</a></h3>
+    <p>Ukrainische Gerichte Banosch-Polenta mit Schafskäse und Speck ...</p>
+    <a href="banosch.html" class="read-more">weiterlesen</a>
+  </div>
+  <div class="recipe-card">
+    <img src="img/Kulinarisches-Kiew-Kiewer-Kotelett.jpg" alt="Kiewer Kotlett">
+    <h3><a href="kiewer_kotlett.html">Kiewer Kotlett mit kalter Kräuterbutter gefüllt</a></h3>
+    <p>Hühnerbrüstchen mit kalter Kräuterbutter gefüllt, paniert und ausgebacken.</p>
+    <a href="kiewer_kotlett.html" class="read-more">weiterlesen</a>
+  </div>
+</section>
+
+<!-- Форма подписки -->
+<section id="mail">
+  <h2>Newsletter Anmeldung</h2>
+  <form method="post" action="http://10.10.0.126/formview.php">
+    <fieldset>
+      <h3>Sie wünschen aktuelle Informationen und mehr Rezepte?</h3>
+      <p>Dann registrieren Sie sich bitte für unseren E-Mail Newsletter.</p>
+      <label>Anrede
+        <select name="salutation">
+          <option>Frau</option>
+          <option>Herr</option>
+        </select>
+      </label>
+      <label>Name
+        <input type="text" name="name" placeholder="Name" maxlength="30">
+      </label>
+      <label>E-Mail
+        <input type="email" name="email" placeholder="E-Mail" required>
+      </label>
+      <label>Kommentar
+        <textarea name="comment" placeholder="Schreiben Sie einen Kommentar"></textarea>
+      </label>
+      <button type="submit">Abschicken</button>
+    </fieldset>
+  </form>
+</section>
+
+<!-- Back to Top -->
+<a href="#top" class="btt">Oben</a>
+
+</div> <!-- /wrapper -->
+
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+  // Слайдер
+  const slides = document.querySelectorAll("#slider img");
+  let current = 0;
+  slides[current].classList.add("active");
+
+  setInterval(()=>{
+    slides[current].classList.remove("active");
+    current = (current+1)%slides.length;
+    slides[current].classList.add("active");
+  }, 3000);
+
+  // Back to top smooth scroll
+  document.querySelector(".btt").addEventListener("click", e=>{
+    e.preventDefault();
+    window.scrollTo({top:0, behavior:"smooth"});
+  });
+
+  // Навигация по якорям
+  document.querySelectorAll("#top_navigation a").forEach(link=>{
+    link.addEventListener("click", e=>{
+      e.preventDefault();
+      document.querySelectorAll("#top_navigation a").forEach(a=>a.classList.remove("current"));
+      link.classList.add("current");
+      const target = document.querySelector(link.getAttribute("href"));
+      window.scrollTo({top: target.offsetTop - 10, behavior:"smooth"});
+    });
+  });
+});
+</script>
+
+</body>
+</html>
