@@ -47,18 +47,16 @@
 
 
 
-
-		#startseite{	
+#startseite {
+    height: auto;       /* вместо фиксированной 700px */
+    padding-top: 20px;  /* небольшой отступ сверху */
+    border:0.3125rem solid chocolate;
 }
-		/*text-align:right;*/
-						padding-top: 0.625rem;
-						background-position: center;
-			height: 700px;
-			border:0.3125rem solid chocolate;
-						}
+
+
 		h1 {/*background-color: aliceblue;*/
 						font-size:4vw;
-						margin-top: 700px;
+						margin-top: 0px;
 						font-family: Satisfy ;
 						color: red;
 				
@@ -201,6 +199,7 @@
 		button{background:  #FFFFFF;
 		color:#A23123;
 		border: 3rem rgba(0,0,0,1.00);}
+
 
 
 
