@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MakeUp</title>
+
+<style>
+ :root{
+      --burgundy-dark:#fcfcfb;
+      --burgundy:#ae8586;
+      --burgundy-light:hwb(38 48% 16%);
+      --gold:#4c0214;
+      --white:black;
+      --glass: rgba(255,255,255,0.06);
+      --card-shadow: 0 8px 24px rgba(0,0,0,0.35);
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: var(--beige);
+  color: var(--burgundy);
+}
+
+header {
+  background-color: var(--burgundy);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+header .logo {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+header a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Галерея в 2 столбца с одинаковой высотой изображений */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  padding: 20px;
+  max-width: 631px;
+  margin: 0 auto;
+}
+
+.gallery img {
+  width: 100%;
+  height: 486px; /* фиксированная высота */
+  object-fit: cover; /* чтобы картинка заполняла окно, без искажений */
+  border-radius: 10px;
+  border: 5px solid var(--gold);
+  transition: transform 0.3s;
+}
+
+.gallery img:hover {
+  transform: scale(1.03);
+}
+
+/* Мобильная версия — 1 столбец */
+@media (max-width: 600px) {
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+}
+
+.back-btn {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  background-color: var(--gold);
+  color: var(--burgundy);
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+}
+
+.back-btn:hover {
+  background-color: var(--burgundy);
+  color: white;
+}
+
+footer {
+  background-color: #9e3e3339;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+.icons a {
+  display: inline-block;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.icons a:hover {
+  transform: scale(1.1);
+  opacity: 0.8;
+}
+
+.icons img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: contain;
+  background-color: transparent;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.icon-source a {
+  color: #555;
+  text-decoration: underline;
+}
+.icon-source {
+  font-size: 12px;
+  color: #999;
+  text-align: center;
+  margin-top: 10px;
+}
+
+
+
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">MakeUp</div>
+  <a href="index.html">Главная</a>
+</header>
+
+<section class="gallery">
+  <img src="makeup/image-13-11-25-05-40-1.jpeg" alt="Прическа 1">
+  <img src="makeup/image-13-11-25-05-40-9.jpeg" alt="Прическа 2">
+  <img src="makeup/image-13-11-25-05-40-11.jpeg" alt="Прическа 3">
+  <img src="makeup/image-13-11-25-05-40-15.jpeg" alt="Прическа 4">
+  <img src="makeup/image-13-11-25-05-40-13.jpeg" alt="Прическа 5">
+   <img src="makeup/image-13-11-25-05-40-17.jpeg" alt="Прическа 6">
+   <img src="makeup/image-20-11-25-04-42-4.jpeg" alt="Прическа 7">
+  <img src="makeup/image-13-11-25-05-40-5.jpeg" alt="Прическа 8">
+  <img src="makeup/image-13-11-25-05-40-2.jpeg" alt="Прическа 9">
+  <img src="makeup/image-13-11-25-05-40-6.jpeg" alt="Прическа 10">
+  <img src="makeup/image-22-08-25-11-16-4.jpeg" alt="Прическа 11">
+   <img src="makeup/image-13-11-25-05-40-4.jpeg" alt="Прическа 12">
+  <img src="makeup/image-20-11-25-04-42 (1).jpeg" alt="Прическа 13">
+  <img src="makeup/image-20-11-25-04-42-1.jpeg" alt="Прическа 14">
+  <img src="makeup/image-13-11-25-05-40-12.jpeg" alt="Прическа 15">
+  <img src="makeup/image-13-11-25-05-40-16.jpeg" alt="Прическа 16">
+  <img src="makeup/image-13-11-25-05-40.jpeg" alt="Прическа 17">
+   <img src="makeup/image-13-11-25-05-40-14.jpeg" alt="Прическа 18">
+   <img src="makeup/image-20-11-25-04-42-2.jpeg" alt="Прическа 19">
+   <img src="makeup/image-20-11-25-04-42-3.jpeg" alt="Прическа 20">
+</section>
+
+<a href="index.html" class="back-btn">⬅ Назад</a>
+
+<footer>
+  <div class="icons">
+    <a href="https://www.instagram.com/karmanova.makeup_?igsh=MW43cGJiNDR3d2Z6bw==" target="_blank">
+      <img src="bilder/instagram.png" alt="Instagram">
+    </a>
+    <a href="https://t.me/karmanova_makeup" target="_blank">
+      <img src="bilder/telegram.png" alt="Telegram">
+    </a>
+    <a href="https://vk.com/karmanova_5" target="_blank">
+      <img src="bilder/vk.png" alt="VK">
+    </a>
+  </div>
+
+  <p>&copy; 2025 KARMANOVA | Политика конфиденциальности / Datenschutz</p>
+         <p class="icon-source">
+  © Icons by <a href="https://icons8.com/" target="_blank">Icons8</a>
+</p>  
+</footer>
+
+</body>
+</html>

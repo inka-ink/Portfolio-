@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Прайс — Визаж и Укладка</title>
+  <style>
+    :root{
+      --burgundy-dark:#fcfcfb;
+      --burgundy:#ae8586;
+      --burgundy-light:hwb(38 48% 16%);
+      --gold:#4c0214;
+      --white:black;
+      --glass: rgba(255,255,255,0.06);
+      --card-shadow: 0 8px 24px rgba(0,0,0,0.35);
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    *{box-sizing:border-box}
+    body{margin:0; background:linear-gradient(180deg,var(--burgundy-dark),var(--burgundy)); color:var(--white); -webkit-font-smoothing:antialiased}
+    .container{max-width:980px;margin:28px auto;padding:20px}
+    header{display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .logo{display:flex;align-items:center;gap:12px}
+    .logo .mark{width:52px;height:52px;border-radius:12px;background:linear-gradient(135deg,var(--burgundy-light),var(--gold));display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--burgundy-dark)}
+    h1{font-size:22px;margin:0}
+    p.lead{margin:6px 0 18px;opacity:0.95}
+
+    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin-top:18px}
+    .card{background:var(--glass);padding:18px;border-radius:14px;box-shadow:var(--card-shadow);backdrop-filter: blur(6px)}
+    .card h3{margin:0 0 8px;font-size:16px}
+    .price{font-size:20px;font-weight:700;color:var(--gold)}
+    .note{font-size:13px;opacity:0.9;margin-top:8px}
+    .course{margin-top:12px}
+    .course li{margin:8px 0}
+
+    .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:20px}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 16px;border-radius:12px;border:0;cursor:pointer;font-weight:600;text-decoration:none;justify-content:center}
+    .btn--gold{background:var(--gold);color:var(--burgundy-dark);box-shadow:0 6px 18px rgba(0,0,0,0.25)}
+    .btn--ghost{background:#4c0214;;border:1px solid rgba(255,255,255,0.12);color:var(--white)}
+    .small{font-size:14px;padding:8px 12px;border-radius:10px}
+
+   /* Футер */
+footer {
+  
+  
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+.cons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;  /* расстояние между иконками */
+  margin-bottom: 15px;
+}
+
+.icons a {
+  display: inline-block;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.icons a:hover {
+  transform: scale(1.1);
+  opacity: 0.8;
+}
+
+.icons img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;  /* делает иконки круглыми */
+  object-fit: cover;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+    @media(min-width:880px){h1{font-size:26px}}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">
+        <div class="mark">K/Ü</div>
+        
+        <div>
+          <h1>Прайс и услуги — Визаж & Укладка</h1>
+          <p class="lead">Естественные и вечерние образы. Возможен выезд.</p>
+        </div>
+      </div>
+      
+    </header>
+<a href="/" class="btn small" style="border:1px solid rgba(255,255,255,0.08);background:transparent;color:var(--white)">На главную</a>
+    <main>
+      <div class="cards">
+        <div class="card">
+          <h3>Макияж</h3>
+          <div class="price">3 000 ₽</div>
+          <div class="note">Дневной и вечерний макияж — для фото и мероприятий.</div>
+        </div>
+        <div class="card">
+          <h3>Укладка</h3>
+          <div class="price">2 500 ₽</div>
+          <div class="note">Фены, лёгкие локоны, подготовка волос под причёску.</div>
+        </div>
+        <div class="card">
+          <h3>Прическа</h3>
+          <div class="price">2 700 ₽</div>
+          <div class="note">Праздничные и повседневные причёски, вечерние варианты.</div>
+        </div>
+        <div class="card">
+          <h3>Выезд</h3>
+          <div class="price">2 000 ₽</div>
+          <div class="note">Выезд по городу — укажите адрес и удобное время.</div>
+        </div>
+      </div>
+
+      <div class="card course" style="margin-top:18px">
+        <h3>Курс "Макияж для себя"</h3>
+        <ul>
+          <li>1 урок — <span class="price">5 000 ₽</span></li>
+          <li>2 урока — <span class="price">2 500 ₽</span></li>
+          <li>3 урока — <span class="price">2 000 ₽</span></li>
+        </ul>
+        <div class="note">Практические занятия: базовый макияж, техника нанесения, коррекция бровей и лица.</div>
+      </div>
+
+      <div class="actions">
+        <a href="https://t.me/karmanova_makeup" target="_blank" class="btn btn--gold">Записаться через Telegram</a>
+       
+      </div>
+    </main>
+
+<footer>
+  <div class="icons">
+    <a href="https://www.instagram.com/karmanova.makeup_?igsh=MW43cGJiNDR3d2Z6bw==" target="_blank">
+      <img src="bilder/instagram.png" alt="Instagram">
+    </a>
+    <a href="https://t.me/karmanova_makeup" target="_blank">
+      <img src="bilder/telegram.png" alt="Telegram">
+    </a>
+    <a href="https://vk.com/karmanova_5 "  target="_blank">
+      <img src="bilder/vk.png" alt="VK">
+    </a>
+    
+    
+  </div>
+
+  <p>&copy; 2025 Makeup Artist | Политика конфиденциальности / Datenschutz</p>
+</footer>
+  </div>
+</body>
+</html>

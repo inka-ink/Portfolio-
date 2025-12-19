@@ -1,0 +1,1056 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MAKEUP ARTIST — Inna Lobenko</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&family=Pacifico&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --page-bg: #f6efe6;   /* нежный беж */
+      --text: #1b1b1b;      /* тёмно-шоколадный вместо чёрного */
+      --accent: #6b2f36;    /* бордовый */
+      --muted: #7d6f66;
+      --card: rgba(255,255,255,0.6);
+      --glass: rgba(255,255,255,0.7);
+      --max-width:1100px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: 'Montserrat', system-ui, Arial, sans-serif;
+      color:var(--text);
+      background:var(--page-bg);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.5;
+    }
+    :root {
+  --beige: #f3e9df;
+  --dark: #2a1f1d;
+  --bordo: #6b2f36;
+}
+
+/* ===================== DESKTOP ===================== */
+
+.hero {
+  width: 100%;
+  background: var(--beige);
+  overflow: hidden;
+}
+
+.hero-desktop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 60px 8%;
+}
+
+.hero-photo img {
+  width: 420px;
+  height: auto;
+  border-radius: 16px;
+  object-fit: cover;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+/* TEXT RIGHT SIDE */
+.hero-content .title {
+  font-size: 48px;
+  font-weight: 300;
+  color: var(--bordo);
+  margin-bottom: 10px;
+  font-family: serif;
+}
+
+.hero-content .name {
+  font-size: 40px;
+  font-weight: 500;
+  color: var(--dark);
+  margin-bottom: 20px;
+}
+
+.hero-content .subtitle {
+  font-size: 20px;
+  max-width: 360px;
+  color: var(--dark);
+  opacity: 0.8;
+  margin-bottom: 40px;
+}
+
+/* Desktop menu */
+.menu-desktop a {
+  margin-right: 25px;
+  color: var(--dark);
+  text-decoration: none;
+  font-size: 18px;
+  transition: 0.3s;
+}
+.menu-desktop a:hover {
+  color: var(--bordo);
+}
+
+/* ===================== MOBILE ===================== */
+
+.hero-mobile {
+  display: none;
+  position: relative;
+}
+
+.hero-mobile-photo {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+}
+
+.hero-mobile-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 40px 20px;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.6));
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.hero-mobile-overlay h1 {
+  font-size: 32px;
+}
+.hero-mobile-overlay h2 {
+  font-size: 26px;
+  margin-bottom: 8px;
+}
+.hero-mobile-overlay p {
+  max-width: 250px;
+  font-size: 16px;
+  opacity: 0.9;
+}
+
+/* Mobile menu button */
+.mobile-menu-btn {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  font-size: 32px;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Mobile dropdown menu */
+.mobile-menu {
+  display: none;
+  margin-top: 20px;
+  flex-direction: column;
+}
+.mobile-menu a {
+  color: white;
+  text-decoration: none;
+  font-size: 22px;
+  margin: 10px 0;
+}
+
+/* === Show mobile menu === */
+.mobile-menu.open {
+  display: flex;
+}
+
+/* ===================== RESPONSIVE ===================== */
+
+@media (max-width: 900px) {
+  .hero-desktop {
+    display: none;
+  }
+  .hero-mobile {
+    display: block;
+  }
+   .nav-list {
+    display: none;
+    }
+}
+/* Контейнер с иконками */
+.social-icons {
+  display: flex;
+  gap: 15px;
+  margin: 10px 0 20px 0;
+}
+
+.social-icons img {
+  width: 32px;
+  height: 32px;
+  transition: transform 0.2s;
+}
+
+.social-icons img:hover {
+  transform: scale(1.15);
+}
+
+/* Кнопка-стрелка вверх */
+.arrow-up {
+  display: inline-block;
+  width: 45px;
+  height: 45px;
+  background: #65170f; /* твой оттенок */
+  border-radius: 50%;
+  position: relative;
+  text-decoration: none;
+}
+
+.arrow-up::before {
+  content: "↑";
+  font-size: 26px;
+  font-weight: bold;
+  color: white;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -55%);
+}
+
+.arrow-up:hover {
+  background: #419a74;
+}
+
+
+.icon-source a {
+  color: #555;
+  text-decoration: underline;
+}
+.icon-source {
+  font-size: 12px;
+  color: #999;
+  text-align: center;
+  margin-top: 10px;
+}
+
+
+
+
+
+
+
+
+    /* NAV */
+    .nav{position:fixed; top:0; left:0; right:0; display:flex; justify-content:space-between; align-items:center; padding:14px 20px; z-index:60; background:#9e3e3339}
+    .logo{color:var(--text); text-decoration:none; font-weight:700; letter-spacing:1px}
+    .nav-toggle{display:none; background:none; border:none; color:var(--text); font-size:24px}
+    .nav-list{display:flex; gap:14px; align-items:center; list-style:none; margin:0; padding:0}
+    .nav-list a{color:var(--text); text-decoration:none; padding:6px 8px}
+    .lang-switch{display:flex; gap:8px}
+    .lang-btn{background:transparent; border:1px solid rgba(0,0,0,0.06); color:var(--text); padding:6px 10px; border-radius:6px; cursor:pointer}
+
+    /* HERO — использует твое фото вместо чёрной шапки */
+    .hero{width:100%; min-height:78vh; display:flex; align-items:center; justify-content:center; position:relative; margin-top:56px}
+    .hero-image{position:absolute; inset:0; background-image: url('/mnt/data/IMG_5609.jpeg'); background-size:cover; background-position:center; filter:saturate(0.95) contrast(0.98);}
+    /* лёгкая светящаяся вуаль, чтобы фото читалось на светлом фоне */
+    .hero-overlay{position:absolute; inset:0; background: linear-gradient(180deg, rgba(250,246,241,0.25), rgba(250,246,241,0.35));}
+    .hero-inner{position:relative; z-index:2; text-align:center; padding:28px; max-width:900px}
+    .kicker{color:var(--accent); letter-spacing:6px; font-size:13px; margin-bottom:10px; font-weight:600}
+    .hero-name{font-family:'Pacifico', cursive; font-size:48px; margin:0; color:var(--text);}
+    .hero-sub{color:var(--text); margin-top:12px; font-size:18px}
+    .hero-card{display:inline-block; background:var(--glass); padding:14px 20px; border-radius:10px; box-shadow:0 6px 20px rgba(0,0,0,0.08)}
+
+    /* SECTIONS */
+    .section{padding:60px 20px}
+    .container{max-width:var(--max-width); margin:0 auto}
+    h2.section-title{font-size:24px; margin:0 0 8px; color:var(--text)}
+    .num{color:var(--muted); font-weight:700; font-size:13px; letter-spacing:3px; margin-bottom:8px}
+
+    /* ABOUT */
+    .about-grid{display:grid; grid-template-columns:1fr 420px; gap:28px; align-items:center}
+    .about-text{background:transparent}
+    .about-photo{width:100%; border-radius:8px; overflow:hidden}
+    .about-photo img{width:100%; height:100%; object-fit:cover; display:block}
+    .about-copy{background:rgba(255,255,255,0.55); padding:18px; border-radius:8px}
+
+    /* SERVICES */
+    .services-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:18px}
+    .service-card{background:#fff; padding:18px; border-radius:10px; border-left:4px solid var(--accent); color:var(--text); box-shadow:0 6px 18px rgba(16,12,10,0.04)}
+
+    /* PORTFOLIO vertical cards */
+    .portfolio-grid{display:flex; flex-direction:column; gap:16px}
+    .portfolio-item{display:flex; gap:16px; align-items:center; background:#fff; padding:12px; border-radius:8px; box-shadow:0 6px 18px rgba(16,12,10,0.04);text-decoration: none; color: inherit;}
+    .portfolio-thumb{width:120px; height:160px; border-radius:6px; background-size:cover; background-position:center; flex-shrink:0}
+    .portfolio-info h3{margin:0 0 6px 0}
+    .portfolio-info p{margin:0; color:var(--muted)}
+    .portfolio-grid a.portfolio-item {display: flex; }
+
+    /* REVIEWS */
+    #review-container { margin: 0 auto; max-width: 1115px;}
+    .review { width: 100%; padding: 20px 25px;  border-radius: 12px; background-color: #ffffff; font-size: 18px; line-height: 1.5; box-shadow: 0 4px 8px rgba(0,0,0,0.05);}
+    .review-name { font-size: 20px; font-weight: 700; color: var(--text); margin-bottom: 10px; }
+
+    /* CONTACT */
+    .contact{display:flex; gap:20px; align-items:center; justify-content:space-between; flex-wrap:wrap}
+    .contact .left{max-width:600px}
+    .cta{display:inline-block; padding:12px 18px; border-radius:8px; background:var(--accent); color:#fff; text-decoration:none}
+
+    /* FOOTER */
+    footer{padding:30px 20px; text-align:center; color:var(--muted)}
+
+    /* small hero for sections */
+    .small-hero{min-height:38vh; background-size:cover; background-position:center; position:relative; display:flex; align-items:center;}
+    .small-hero::after{content:''; position:absolute; inset:0; background:linear-gradient(180deg, rgba(246,240,234,0.6), rgba(246,240,234,0.6));}
+    .small-hero h1{position:relative; z-index:2; padding-left:24px}
+
+    /* subtle animations */
+    @keyframes fadeUp{from{opacity:0; transform:translateY(10px)} to{opacity:1; transform:translateY(0)}}
+
+    /* responsive */
+    @media (max-width:950px){
+      .about-grid{grid-template-columns:1fr}
+      .nav-toggle{display:block}
+      .nav-list{display: none; position:fixed; right:10px; top:64px; background:var(--page-bg); padding:18px; flex-direction:column; display:none; border-radius:8px; box-shadow:0 10px 30px rgba(16,12,10,0.08)}
+      .nav-list.show{display:flex}
+      .hero-name{font-size:36px}
+      .hero-inner{padding:14px}
+      .hero-image{filter:brightness(1);}
+    }
+    @media (max-width:480px){
+      .hero{min-height:56vh}
+      .hero-name{font-size:26px}
+      .portfolio-item{flex-direction:column; align-items:flex-start}
+      .portfolio-thumb{width:100%; height:220px}
+      .hero-card{width:92%; padding:12px}
+      .nav-list { display: none !important; /* Прячем большое меню */ }
+      .nav-toggle { display: none !important; /* скрываем бургер из верхней навигации */}
+      .burger { display: block; /* Показываем бургер */}
+      .mobile-menu {display: none; /* Меню скрыто, пока не нажали бургер */ }
+     .mobile-menu.open { display: flex; flex-direction: column; }
+    }
+    @media (min-width: 951px){
+  .nav-list { display: flex; flex-direction: row; }
+  .nav-toggle { display: none; }
+}
+
+
+    /* utility */
+    .muted{color:var(--muted)}
+    .center{text-align:center}
+    a {color:var(--text)}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.6);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.card {
+  background: #fff;
+  padding: 20px;
+  max-width: 500px;
+  width: 90%;
+  border-radius: 10px;
+  position: relative;
+}
+
+.card .close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border: none;
+  background: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.contact-address {
+  margin-top: 20px;
+}
+
+.contact-address h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.contact-address h3 img {
+  margin-right: 8px;
+}
+
+.contact-address p {
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+.map-block {
+  text-align: center;
+  margin: 20px auto;
+}
+
+.map-block img {
+  width: 100%;
+  max-width: 500px; /* уменьшаешь тут */
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+  cursor: pointer;
+}
+
+
+
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <a class="logo" href="#">Karmanova MakeUp</a>
+    <div style="display:flex; gap:12px; align-items:center">
+      <div class="lang-switch">
+        <button class="lang-btn" data-lang="ru">RU</button>
+        <button class="lang-btn" data-lang="de">DE</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+
+      </div>
+      <button class="nav-toggle" id="navToggle">☰</button>
+    </div>
+
+    <ul class="nav-list" id="navList">
+      <li><a href="#hero" data-key="home">Главная</a></li>
+      <li><a href="#about" data-key="about">About</a></li>
+      <li><a href="#services" data-key="services">Services</a></li>
+      <li><a href="#portfolio" data-key="portfolio">Works</a></li>
+      <li><a href="#reviews" data-key="reviews">Reviews</a></li>
+      <li><a href="#contact" class="cta" data-key="contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO with your photo as background; on mobile the photo is visible with text on top -->
+  <header class="hero">
+  <div class="hero-desktop">
+    <div class="hero-photo">
+      <img src="bilder/IMG_5609.jpeg" alt="Karmanova MakeUp">
+    </div>
+
+    <div class="hero-content">
+      <h1 class="title" data-i18n="heroTitle">MAKEUP ARTIST</h1>
+<h2 class="name" data-i18n="heroName">Karmanova YULIYA</h2>
+<p class="subtitle" data-i18n="heroSubtitle">
+  Создаю естественный и утончённый макияж
+</p>
+
+</div>
+    </div>
+
+  <!-- Mobile version -->
+  <div class="hero-mobile">
+    <img class="hero-mobile-photo" src="bilder/IMG_5609.jpeg" alt="">
+    
+    <div class="hero-mobile-overlay">
+      <h1>MAKEUP ARTIST</h1>
+      <h2>Karmanova YULIYA</h2>
+      <p>Создаю естественный и утончённый макияж</p>
+
+      <!-- Mobile menu button -->
+      <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
+
+      <nav class="mobile-menu" id="mobileMenu">
+        <a href="#about" onclick="toggleMenu()">Обо мне</a>
+        <a href="#services" onclick="toggleMenu()">Услуги</a>
+        <a href="#portfolio" onclick="toggleMenu()">Портфолио</a>
+        <a href="#reviews" onclick="toggleMenu()">Отзывы</a>
+        <a href="#contact" onclick="toggleMenu()">Контакты</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+
+  <!-- ABOUT -->
+  <section id="about" class="section">
+    <div class="container about-grid">
+      <div class="about-text">
+        <div class="num">01</div>
+        <h2 class="section-title" data-i18n="aboutTitle">Обо мне</h2>
+        <div class="about-copy" data-i18n-html>
+          Я — визажист с двухлетним опытом работы. За это время, я успела создать больше 100 макияжей и поработать с разными типами кожи и внешности,<br><br>
+          создать макияж для фотосессий, свадеб, вечерних выходов и повседневных образов.<br><br>
+          Благодаря своему опыту, я могу создать для вас полный образ за 1.5–2 часа (макияж + укладка).<br><br>
+
+          В своей работе я делаю акцент на индивидуальности — для меня важно подчеркнуть естественную красоту, а не скрыть её.<br><br>
+
+          Моя цель — чтобы каждая девушка чувствовала себя уверенно, гармонично и легко с макияжем, который мы создаём вместе.
+        </div>
+      </div>
+      <div class="about-photo">
+        <!-- placeholder image, replace later if you want -->
+        <img src="bilder/IMG_5615.jpeg" alt="Karmanova MakeUp">
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" class="section">
+    <div class="container">
+      <div class="num">02</div>
+      <h2 class="section-title" data-i18n="servicesTitle">Услуги</h2>
+      <div class="services-grid">
+        <div class="service-card" style="animation-delay:.1s">
+          <h3 data-i18n="srv1">Дневной макияж</h3>
+<p class="muted" data-i18n="srv1desc">Лёгкий, естественный образ для работы и встреч.</p>
+
+        </div>
+        <div class="service-card" style="animation-delay:.2s">
+          <h3 data-i18n="srv2">Вечерний</h3>
+<p class="muted" data-i18n="srv2desc">Более выразительный образ для фотосессий и мероприятий.</p>
+        </div>
+        <div class="service-card" style="animation-delay:.3s">
+          <h3 data-i18n="srv3">Свадебный</h3>
+<p class="muted" data-i18n="srv3desc">свадебный образ с учётом стойкости.</p>
+        </div>
+        <div class="service-card" style="animation-delay:.4s">
+          <h3 data-i18n="srv4">Обучение</h3>
+<p class="muted" data-i18n="srv4desc">Индивидуальные уроки и мастер-классы.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PORTFOLIO -->
+  <section id="portfolio" class="section">
+    <div class="container">
+      <div class="num">03</div>
+      <h2 class="section-title" data-i18n="portfolioTitle">Портфолио</h2>
+      <div class="portfolio-grid">
+        <!-- vertical cards, placeholders -->
+        <a href="makeapp.html" class="portfolio-item">
+          <div class="portfolio-thumb" style="background-image:url('makeup/image-13-11-25-05-40-1.jpeg')"></div>
+          <div class="portfolio-info">
+            <h3 data-i18n="port1title">Персональный макияж</h3>
+<p class="muted" data-i18n="port1desc">Подчёркиваю естественную красоту и создаю выразительный образ.</p>
+
+          </div>
+           </a>
+        
+        <a href="hair.html" class="portfolio-item">
+          <div class="portfolio-thumb" style="background-image:url('hare/image-13-11-25-05-41-4.jpeg')"></div>
+          <div class="portfolio-info">
+           <h3 data-i18n="port2title">Прически</h3>
+<p class="muted" data-i18n="port2desc">Создаю стильные и аккуратные прически для любого события.</p>
+
+          </div>
+           </a>
+        
+        <a href="preis.html" class="portfolio-item">
+          <div class="portfolio-thumb" style="background-image:url('bilder/kisti\ \(1\).jpeg')"></div>
+          <div class="portfolio-info">
+            <h3 data-i18n="port3title">Прайс</h3>
+<p class="muted" data-i18n="port3desc">Прайс — Визаж, Укладка и Обучение.</p>
+
+          </div>
+           </a>
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section id="reviews" class="section">
+    <div class="container">
+      <div class="num">04</div>
+       <h2 data-i18n="reviewsTitle2">Отзывы наших клиентов</h2>
+
+       <div id="review-container"></div>
+    </div>
+  </section>
+
+ <!-- CONTACT -->
+<section id="contact" class="section">
+  <div class="container">
+    <div class="num">05</div>
+    <h2 class="section-title" data-i18n="contactTitle">Контакты</h2>
+
+    <div class="contact">
+      <div class="left">
+
+<p class="muted" data-i18n="contactText">
+  Для записи напишите в WhatsApp, Telegramm, VK, Instagram или по электронной почте
+</p>
+
+        <!-- ИКОНКИ ПОД НАДПИСЬЮ -->
+        <div class="social-icons">
+          <a href="https://wa.me/" target="_blank">
+            <img src="bilder/whatsapp.png" alt="WhatsApp">
+          </a>
+
+          <a href="https://www.instagram.com/karmanova.makeup_?igsh=MW43cGJiNDR3d2Z6bw==" target="_blank">
+            <img src="bilder/instagram.png" alt="Instagram">
+          </a>
+
+          <a href="https://t.me/karmanova_makeup" target="_blank">
+            <img src="bilder/telegram.png" alt="Telegram">
+          </a>
+
+          <a href="https://vk.com/karmanova_5 " target="_blank">
+            <img src="bilder/vk.png" alt="VK">
+          </a>
+        </div>
+
+        <p><strong data-i18n="phoneLabel">Мой номер телефона: +79691699646</strong></p>
+
+        <p><strong>Email:</strong> <a href="mailto:karmanovaula32@gmail.com">karmanovaula32@gmail.com</a></p>
+ 
+        <div class="right contact-address">
+  <h3>📍 Адрес</h3>
+ 
+  
+
+  <p>
+    <strong>Karmanova MakeUp</strong><br>
+    Россия, Ростов-на-Дону<br>
+    Ворошиловский 46/176
+  </p>
+</div>
+
+
+ 
+</div>
+
+ 
+      
+  </div>
+
+
+      <!-- КНОПКА-СТРЕЛКА ВВЕРХ -->
+     <a href="#" class="cta">
+  <img src="bilder/up-arrow (1).png" alt="arrow" style="width:22px; height:auto;">
+</a>
+
+    </div>
+  </div>
+</section>
+
+ <!-- footer-------------------------------- -->
+  <footer class="sitefoot">
+  <span id="year"></span> Karmanova MakeUp — Makeup Artist
+
+  <p>
+    <span class="modal-btn" data-modal="privacyModal" data-ru="Datenschutz" data-en="Privacy" data-de="Datenschutz">Datenschutz</span> | 
+    <span class="modal-btn" data-modal="termsModal" data-ru="Nutzungsbedingungen" data-en="Terms" data-de="Nutzungsbedingungen">Nutzungsbedingungen</span> | 
+    <span class="modal-btn" data-modal="impressumModal" data-ru="Impressum" data-en="Impressum" data-de="Impressum">Impressum</span>
+  </p>
+
+  <!-- PRIVACY MODAL -->
+  <div class="modal" id="privacyModal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="card">
+      <button class="close">✕</button>
+      <h2 data-ru="Политика конфиденциальности" data-en="Privacy Policy" data-de="Datenschutz">Политика конфиденциальности</h2>
+      <div id="policy-ru">
+  <h3>1. Общие положения</h3>
+  <p>На этом сайте Karmanova MakeUp не собираются персональные данные напрямую. Все записи на услуги осуществляются через внешние сервисы: Instagram, VK, Telegram.</p>
+
+  <h3>2. Сбор данных</h3>
+  <p>Сайт не собирает имя, e-mail, телефон или другие персональные данные. Любая передача информации происходит только через сторонние сервисы (Instagram, VK, Telegram) согласно их политикам конфиденциальности.</p>
+
+  <h3>3. Контактная информация</h3>
+  <p>Для связи: Karmanova MakeUp, e-mail: <a href="mailto:karmanovaula32@gmail.com">karmanovaula32@gmail.com</a>, тел.: +7 969 169 96 46</p>
+
+  <h3>4. Cookies и внешние сервисы</h3>
+  <p>Сайт использует только технические cookies для работы и может подключать виджеты сторонних сервисов (Instagram, VK, Telegram), которые могут собирать данные согласно своим политикам конфиденциальности.</p>
+</div>
+
+     <div id="policy-en" style="display:none;">
+  <h3>1. General</h3>
+  <p>This website Karmanova MakeUp does not collect personal data directly. All service bookings are made via external services: Instagram, VK, Telegram.</p>
+
+  <h3>2. Data collection</h3>
+  <p>The website does not collect name, e-mail, phone, or other personal data. Any information is sent only through third-party services (Instagram, VK, Telegram) according to their privacy policies.</p>
+
+  <h3>3. Contact</h3>
+  <p>Contact: Karmanova MakeUp, e-mail: <a href="mailto:karmanovaula32@gmail.com">karmanovaula32@gmail.com</a>, tel.: +7 969 169 96 46</p>
+
+  <h3>4. Cookies & third-party services</h3>
+  <p>The site uses only technical cookies for operation and may embed third-party widgets (Instagram, VK, Telegram) that may collect data according to their policies.</p>
+</div>
+
+      <div id="policy-de" style="display:none;">
+  <h3>1. Allgemeines</h3>
+  <p>Auf dieser Website Karmanova MakeUp werden keine personenbezogenen Daten direkt gesammelt. Alle Buchungen erfolgen über externe Dienste: Instagram, VK, Telegram.</p>
+
+  <h3>2. Datenerhebung</h3>
+  <p>Die Website sammelt keine Namen, E-Mails, Telefonnummern oder andere persönliche Daten. Jegliche Übertragung erfolgt nur über Drittanbieter (Instagram, VK, Telegram) gemäß deren Datenschutzrichtlinien.</p>
+
+  <h3>3. Kontakt</h3>
+  <p>Kontakt: Karmanova MakeUp, E-Mail: <a href="mailto:karmanovaula32@gmail.com">karmanovaula32@gmail.com</a>, Tel.: +7 969 169 96 46</p>
+
+  <h3>4. Cookies & externe Dienste</h3>
+  <p>Die Website verwendet nur technische Cookies für den Betrieb und kann Widgets von Drittanbietern (Instagram, VK, Telegram) einbinden, die Daten gemäß ihren Richtlinien erfassen können.</p>
+</div>
+
+    </div>
+  </div>
+
+  <!-- TERMS MODAL -->
+  <div class="modal" id="termsModal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="card">
+      <button class="close">✕</button>
+      <h2 data-ru="Условия использования" data-en="Terms of Use" data-de="Nutzungsbedingungen">Условия использования</h2>
+      <div id="terms-ru">
+  <p>Используя сайт Karmanova MakeUp, вы соглашаетесь с тем, что все услуги предоставляются через внешние сервисы (Instagram, VK, Telegram). Сайт не несет ответственности за работу этих сервисов. Контактная информация указана для связи с владельцем: Karmanova MakeUp, e-mail: karmanovaula32@gmail.com, тел.: +7 969 169 96 46.</p>
+</div>
+
+    <div id="terms-en" style="display:none;">
+  <p>By using the Karmanova MakeUp website, you agree that all services are provided via external services (Instagram, VK, Telegram). The website is not responsible for the functioning of these services. Contact information is provided to reach the owner: Karmanova MakeUp, e-mail: karmanovaula32@gmail.com, tel.: +7 969 169 96 46.</p>
+</div>
+<div id="terms-de" style="display:none;">
+  <p>Durch die Nutzung der Karmanova MakeUp-Website stimmen Sie zu, dass alle Dienstleistungen über externe Dienste (Instagram, VK, Telegram) erbracht werden. Die Website haftet nicht für die Funktion dieser Dienste. Kontaktinformationen des Eigentümers: Karmanova MakeUp, E-Mail: karmanovaula32@gmail.com, Tel.: +7 969 169 96 46.</p>
+</div>
+
+    </div>
+  </div>
+
+  <!-- IMPRESSUM MODAL -->
+  <div class="modal" id="impressumModal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="card">
+      <button class="close">✕</button>
+      <h2 data-ru="Импрессум" data-en="Impressum" data-de="Impressum">Импрессум</h2>
+     <div id="impressum-ru">
+  <p>Владелец сайта: Karmanova YULIYA<br>
+  E-mail: <a href="mailto:karmanovaula32@gmail.com">karmanovaula32@gmail.com</a><br>
+  Тел.: +7 969 169 96 46<br>
+  Адрес: Россия, Ростов-на-Дону, Ворошиловский 46/176</p>
+</div>
+
+      <div id="impressum-en" style="display:none;">
+  <p>Website owner: Karmanova YULIYA<br>
+  E-mail: <a href="mailto:karmanovaula32@gmail.com">karmanovaula32@gmail.com</a><br>
+  Tel.: +7 969 169 96 46<br>
+  Address: Russia, Rostov-on-Don, Voroshilovsky 46/176</p>
+</div>
+
+     <div id="impressum-de" style="display:none;">
+  <p>Website-Besitzer: Karmanova YULIYA<br>
+  E-Mail: <a href="mailto:karmanovaula32@gmail.com">karmanovaula32@gmail.com</a><br>
+  Tel.: +7 969 169 96 46<br>
+  Adresse: Russland, Rostow am Don, Voroshilowski 46/176</p>
+</div>
+
+    </div>
+  </div>
+</footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // mobile menu
+    document.getElementById('navToggle').addEventListener('click', function(){
+      document.getElementById('navList').classList.toggle('show');
+    });
+    document.querySelectorAll('#navList a').forEach(a=> a.addEventListener('click', ()=> document.getElementById('navList').classList.remove('show')));
+
+    // simple fade-in on scroll
+    const observer = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{
+        if(e.isIntersecting){
+          e.target.style.opacity=1; e.target.style.transform='none';
+        }
+      })
+    },{threshold:0.1});
+    document.querySelectorAll('.service-card, .portfolio-item, .review-card').forEach(el=>{
+      el.style.opacity=0; el.style.transform='translateY(14px)'; observer.observe(el);
+    });
+
+ // i18n simple
+const translations = {
+  ru: {
+    home: "Главная",
+    about: "Обо мне",
+    services: "Услуги",
+    portfolio: "Портфолио",
+    reviews: "Отзывы",
+    contact: "Контакты",
+
+    kicker: "MAKEUP ARTIST",
+    name: "Inna Lobenko",
+    tag: "Создаю естественный и утончённый макияж",
+
+    aboutTitle: "Обо мне",
+    servicesTitle: "Услуги",
+    portfolioTitle: "Портфолио",
+    reviewsTitle: "Отзывы",
+    reviewsTitle2: "Отзывы наших клиентов",
+    contactTitle: "Контакты",
+
+    heroTitle: "MAKEUP ARTIST",
+    heroName: "Karmanova YULIYA",
+    heroSubtitle: "Создаю естественный и утончённый макияж",
+
+    srv1: "Дневной макияж",
+    srv2: "Вечерний / Событийный",
+    srv3: "Свадебный",
+    srv4: "Обучение",
+
+    srv1desc: "Лёгкий, естественный образ для работы и встреч.",
+    srv2desc: "Более выразительный образ для фотосессий и мероприятий.",
+    srv3desc: "Свадебный образ с учётом стойкости.",
+    srv4desc: "Индивидуальные уроки и мастер-классы.",
+
+    port1title: "Персональный макияж",
+    port1desc: "Подчёркиваю естественную красоту и создаю выразительный образ.",
+
+    port2title: "Прически",
+    port2desc: "Создаю стильные и аккуратные прически для любого события.",
+
+    port3title: "Прайс",
+    port3desc: "Прайс — Визаж, Укладка и Обучение.",
+
+    contactText:
+      "Для записи напишите в WhatsApp, Telegram, VK, Instagram или по электронной почте",
+    phoneLabel: "Мой номер телефона:",
+
+    book: "Записаться"
+  },
+
+  de: {
+    home: "Startseite",
+    about: "Über mich",
+    services: "Leistungen",
+    portfolio: "Portfolio",
+    reviews: "Bewertungen",
+    contact: "Kontakt",
+
+    kicker: "MAKEUP ARTIST",
+    name: "Inna Lobenko",
+    tag: "Ich kreiere natürliche und feine Make-ups",
+
+    aboutTitle: "Über mich",
+    servicesTitle: "Leistungen",
+    portfolioTitle: "Portfolio",
+    reviewsTitle: "Bewertungen",
+    reviewsTitle2: "Bewertungen unserer Kunden",
+    contactTitle: "Kontakt",
+
+    heroTitle: "MAKEUP ARTIST",
+    heroName: "Karmanova YULIYA",
+    heroSubtitle: "Ich kreiere natürliches und feines Make-up",
+
+    srv1: "Tages-Make-up",
+    srv2: "Abend-/Event-Make-up",
+    srv3: "Braut-Make-up",
+    srv4: "Schulung",
+
+    srv1desc: "Leichtes, natürliches Make-up für Arbeit und Treffen.",
+    srv2desc: "Ausdrucksvolleres Make-up für Fotoshootings und Events.",
+    srv3desc: "Hochzeits-Make-up mit besonderer Haltbarkeit.",
+    srv4desc: "Individuelle Schulungen und Workshops.",
+
+    port1title: "Personalisiertes Make-up",
+    port1desc:
+      "Ich betone die natürliche Schönheit und kreiere einen ausdrucksstarken Look.",
+
+    port2title: "Frisuren",
+    port2desc:
+      "Ich kreiere stilvolle und gepflegte Frisuren für jedes Event.",
+
+    port3title: "Preisliste",
+    port3desc: "Preise — Make-up, Hairstyling und Schulungen.",
+
+    contactText:
+      "Für die Terminvereinbarung schreiben Sie mir in WhatsApp, Telegram, VK, Instagram oder per E-Mail",
+    phoneLabel: "Meine Telefonnummer:",
+
+    book: "Buchen"
+  },
+
+  en: {
+    home: "Home",
+    about: "About",
+    services: "Services",
+    portfolio: "Portfolio",
+    reviews: "Reviews",
+    contact: "Contact",
+
+    kicker: "MAKEUP ARTIST",
+    name: "Inna Lobenko",
+    tag: "I create natural and refined makeup",
+
+    aboutTitle: "About Me",
+    servicesTitle: "Services",
+    portfolioTitle: "Portfolio",
+    reviewsTitle: "Reviews",
+    reviewsTitle2: "Customer Reviews",
+    contactTitle: "Contacts",
+
+    heroTitle: "MAKEUP ARTIST",
+    heroName: "Karmanova YULIYA",
+    heroSubtitle: "I create natural and refined makeup",
+
+    srv1: "Day Makeup",
+    srv2: "Evening / Event Makeup",
+    srv3: "Bridal Makeup",
+    srv4: "Training",
+
+    srv1desc: "Light, natural makeup for work and meetings.",
+    srv2desc: "More expressive makeup for photoshoots and events.",
+    srv3desc: "Bridal makeup with long-lasting effect.",
+    srv4desc: "Individual lessons and master classes.",
+
+    port1title: "Personal Makeup",
+    port1desc:
+      "I enhance natural beauty and create an expressive, elegant look.",
+
+    port2title: "Hairstyles",
+    port2desc: "I create stylish and neat hairstyles for any occasion.",
+
+    port3title: "Price List",
+    port3desc: "Pricing — Makeup, Hairstyling and Training.",
+
+    contactText:
+      "To book an appointment, write in WhatsApp, Telegram, VK, Instagram or by email",
+    phoneLabel: "My phone number:",
+
+    book: "Book"
+  }
+};
+
+
+
+    function applyLang(lang){
+      document.querySelectorAll('[data-i18n]').forEach(el=>{
+        const key = el.getAttribute('data-i18n');
+        if(translations[lang] && translations[lang][key]) el.textContent = translations[lang][key];
+      });
+      const htmlBlock = document.querySelector('[data-i18n-html]');
+      if(lang==='de'){
+        htmlBlock.innerHTML = `Ich bin Visagistin mit zwei Jahren Erfahrung. In dieser Zeit habe ich mehr als 100 Make-ups erstellt und mit verschiedenen Hauttypen gearbeitet.<br><br>
+        Ich erstelle Make-ups für Fotoshootings, Hochzeiten, Abendveranstaltungen und den Alltag.<br><br>
+        Dank meiner Erfahrung kann ich für Sie ein komplettes Styling in 1,5–2 Stunden (Make-up + Styling) erstellen.<br><br>
+        In meiner Arbeit lege ich Wert auf Individualität — es ist mir wichtig, die natürliche Schönheit zu betonen, nicht zu verbergen.<br><br>
+        Mein Ziel ist, dass sich jede Frau mit dem Make-up, das wir gemeinsam kreieren, selbstbewusst, harmonisch und leicht fühlt.`;
+      } else {
+        htmlBlock.innerHTML = `Я — визажист с двухлетним опытом работы. За это время, я успела создать больше 100 макияжей и поработать с разными типами кожи и внешности,<br><br>
+          создать макияж для фотосессий, свадеб, вечерних выходов и повседневных образов.<br><br>
+          Благодаря своему опыту, я могу создать для вас полный образ за 1.5–2 часа (макияж + укладка).<br><br>
+          В своей работе я делаю акцент на индивидуальности — для меня важно подчеркнуть естественную красоту, а не скрыть её.<br><br>
+          Моя цель — чтобы каждая девушка чувствовала себя уверенно, гармонично и легко с макияжем, который мы создаём вместе.`;
+      }
+
+      document.querySelectorAll('[data-key]').forEach(a=>{
+        const key = a.getAttribute('data-key');
+        if(translations[lang] && translations[lang][key]) a.textContent = translations[lang][key];
+      });
+    }
+
+    document.querySelectorAll('.lang-btn').forEach(b=> b.addEventListener('click', ()=> applyLang(b.getAttribute('data-lang'))));
+    applyLang('ru');
+
+    // smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', function(e){
+        const href = this.getAttribute('href');
+        if(href.length>1){
+          e.preventDefault();
+          document.querySelector(href).scrollIntoView({behavior:'smooth'});
+        }
+      })
+    });
+
+    function toggleMenu() {
+  let menu = document.getElementById("mobileMenu");
+  menu.classList.toggle("open");
+}
+const reviews = [
+  {name: "Анна", text: "@karmanova.yu - Ой, мне безумно понравился макияж!супер,спасибо❤️ "},
+  {name: "Мария", text: "@karmanova.yu -Здравствуйте. Все понравилось) Макияж как и укладка были легкими и совсем не ощущались на коже и волосах, что очень порадовало.Спасибо вам за работу❤️"},
+  {name: "Ольга", text: "@karmanova.yu - Спасибо большое за красивый и эффектный макияж и укладку❣️смывать жалко было 🥲 Очень красиво получилось и смотрелось в кадре. Такая комфортная и уютная атмосфера была в процессе, что всегда важно 🥰"},
+  {name: "Екатерина", text: "@karmanova.yu -сегодня приезжала феечка красоты @karmanova.yu. ❤️‍🔥 мы прошли урок «макияж для себя», я научилась многому. Спасибо Юлечка, ты лучшая ❤️❤️❤️🫶"},
+  {name: "Ирина", text: "@karmanova.yu - Здравствуйте, Юля!☺️ Да, мне понравился макияж и как Вы подобрали средства по типу кожи! Несмотря на то, что у меня было аллергическое высыпание - никаких шелушений не последовало, и макияж был стойким 😍👍 В жару ничего не потекло и матирующими салфетками слой HE СняЛСя!И с укладкой тоже все хорошо, она была и подвижная, и фиксированная одновременно🤗 Спасибо Вам огромное😍😍😍🙏"},
+  {name: "Светлана", text: "@karmanova.yu Мне понравилось, что вы чем-то приятным попшикали руки 😁я прям подметила это, так мало кто делает + был специальный спонж, чтобы не трогать лишний раз лицо , тоже круто! Так же понравилась скорость работы Приятно, что советовались со мной «что нравится, что не нравится» Ни какой из материалов не вызвал реакцию кожи, тоже супер ! Сам макияж и прическа понравились☺️🙈 в мне и мужу😁"},
+  {name: "Людмила", text: "@karmanova.yu- Юлечка, спасибо тебе за вчерашний макияж и укладку!Я с укладкой буду ходить еще минимум сегодняшний день 😍 жаль, конечно, что макияж вчера все же пришлось смыть 😕 Все очень деликатно, аккуратно, нежно, макияж получился красивый и естественный! как я люблю - без перегруженности))Хочется также отметить, что ты учитывала все мои пожелания, интересовалась как и что мне нравится в макияже и что, наоборот я не люблю)) приятно, когда тебя слышат 🫶к отдельное спасибо за разные советы по косметике и за то, что отвечала на мои десятки вопросов «ой, а что это за крем, а что это за спрей?»😂🩷 С ушла не только с красивым макияжем и укладкой, но и новыми рекомендациями для себя!Спасибо еще раз, с тобой время пролетело быстро и очень приятно, ты - прелесть🩶 Буду приходить к тебе сама и рекомендовать тебя своим клиентам 🫶"},
+  {name: "Татьяна", text: "@karmanova.yu - Добрый день 😊всё супер, всегда есть опасения, когда иду к человеку в первый раз, тем более в такой торжественный день, и Вы оправдали все страхи. Макияж держался до самого вечера , несмотря на жару 🫠 а укладка пережила ещё и второй день свадьбы. Замечаний нет, одни только слова благодарности. Спасибо ☺️ буду рекомендовать Вас своим подружкам"},
+  {name: "Наталья", text: "@karmanova.yu самая лучшая 🔥Спасибо огромное, что провела курс «Макияж для себя». Теперь буду еще красивее ✅ Это было очень интересно и я очень многому научилась.Это максимально комфортно и душевно🫂🩶"},
+  {name: "Ольга", text: "@karmanova.yu, все очень понравилось! Ты все так качественно и аккуратно делала!😍 получала огромное удовольствие 🤍 Спасибо тебе огроменное🤍"},
+  {name:"Мария", text:"@karmanova.yu Добрый день!!Ещё раз хочу сказать огромное спасибо за макияж и причёску😍 Все было просто супер Получила огромное количество комплиментов Вы просто волшебница❤️❤️❤️"},
+  {name: "Анна", text: "@karmanova.yu, я осталась в полном восторге! Пришла на макияж + укладку перед свадьбой подруги и получила именно тот результат, который хотела.Что особенно понравилось: стойкость укладки и макияжа - все продержалось целый день, даже после безудержных танцев скорость работы - все было сделано гораздо быстрее, чем я предполагала, что очень порадовало! Не пришлось торопиться на свадьбу ,лояльность - чувствовала себя комфортно, были учтены все пожелания, и получилось все просто супер!"},
+];
+
+const container = document.getElementById('review-container');
+let index = 0;
+
+function showReview() {
+  container.innerHTML = `
+    <div class="review">
+      <div class="review-name">${reviews[index].name}</div>
+      <div>${reviews[index].text}</div>
+    </div>
+  `;
+  index = (index + 1) % reviews.length; // переходим к следующему отзыву
+}
+
+// Показываем первый отзыв сразу
+showReview();
+
+// Меняем отзыв каждые 5 секунд
+setInterval(showReview, 5000);
+
+function toggleMenu() {
+  document.getElementById("mobileMenu").classList.toggle("open");
+}
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  // -------------------
+  // OPEN/CLOSE MODALS
+  // -------------------
+  const modalButtons = document.querySelectorAll('.modal-btn');
+
+  modalButtons.forEach(btn => {
+    const modalId = btn.dataset.modal;
+    const modal = document.getElementById(modalId);
+    const closeBtn = modal.querySelector('.close');
+
+    btn.addEventListener('click', () => {
+      modal.style.display = 'flex';
+      modal.setAttribute('aria-hidden', 'false');
+    });
+
+    closeBtn.addEventListener('click', () => {
+      modal.style.display = 'none';
+      modal.setAttribute('aria-hidden', 'true');
+    });
+
+    modal.addEventListener('click', e => {
+      if (e.target === modal) {
+        modal.style.display = 'none';
+        modal.setAttribute('aria-hidden', 'true');
+      }
+    });
+  });
+
+  // -------------------
+  // AUTO YEAR
+  // -------------------
+  const yearSpan = document.getElementById('year');
+  if (yearSpan) yearSpan.textContent = new Date().getFullYear();
+
+  // -------------------
+  // TRANSLATION
+  // -------------------
+  let lang = 'de'; // 'ru', 'en', 'de' — меняй для переключения
+  document.querySelectorAll('[data-ru]').forEach(el => {
+    if (lang === 'ru') el.textContent = el.dataset.ru;
+    if (lang === 'en') el.textContent = el.dataset.en;
+    if (lang === 'de') el.textContent = el.dataset.de;
+  });
+
+  // Переключение текста в модалках
+  const modals = ['privacy', 'terms', 'impressum'];
+  modals.forEach(id => {
+    document.getElementById(`${id}-ru`).style.display = lang === 'ru' ? 'block' : 'none';
+    document.getElementById(`${id}-en`).style.display = lang === 'en' ? 'block' : 'none';
+    document.getElementById(`${id}-de`).style.display = lang === 'de' ? 'block' : 'none';
+  });
+});
+
+
+  </script>
+</body>
+</html>
