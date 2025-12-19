@@ -48,7 +48,8 @@
 
 
 
-		#startseite{	background-image:  url("../07_abschlussprojekt_lobenko/img/FR_gross.jpg");
+		#startseite{	background-image:   url("../img/FR_gross.jpg");
+}
 		/*text-align:right;*/
 						padding-top: 0.625rem;
 						background-position: center;
@@ -200,6 +201,7 @@
 		button{background:  #FFFFFF;
 		color:#A23123;
 		border: 3rem rgba(0,0,0,1.00);}
+
 
 
 
