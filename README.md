@@ -1,4 +1,4 @@
-Hallo, ich bin Inna
+Hallo, ich bin Inna Lobenko -
 Junior Frontend Developerin mit Fokus auf modernes Webdesign und Benutzerfreundlichkeit.
 Ich entwickle responsive Webseiten, die nicht nur gut aussehen, sondern auch echte Ergebnisse liefern – wie Kundenanfragen und bessere Nutzererfahrung.
 
@@ -24,6 +24,6 @@ Kontakt: offen für Zusammenarbeit - lobenko31@gmail.com
 *** Desktop 1
 ![Desktop](desktop.png)
 
-*** Desktop 2
 ![Desktop](desktop1.png)
+
 
