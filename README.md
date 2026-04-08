@@ -16,3 +16,6 @@ https://inka-ink.github.io/Karmanova.MakeUp/
 Ich suche eine Position als Junior Frontend Developerin, um meine Fähigkeiten in echten Projekten weiterzuentwickeln und Mehrwert für Unternehmen zu schaffen.
 
 Kontakt: offen für Zusammenarbeit - lobenko31@gmail.com 
+
+
+
