@@ -19,3 +19,11 @@ Kontakt: offen für Zusammenarbeit - lobenko31@gmail.com
 
 
 
+*** Screenshots
+
+*** Desktop 1
+![Desktop](desktop.png)
+
+*** Desktop 2
+![Desktop](desktop1.png)
+
