@@ -20,5 +20,12 @@ Dies ist das Administrations-Modul für einen Online-Shop für handgemachte Prod
 
 ---
 **Geplante Updates:** Integration einer Storefront (Schaufenster) für Kunden und Anbindung einer Datenbank.
-![Admin Login](Admin Login..png)
-![Admin Login](Admin panel.png)
+![Login Page](Admin-Login..png)
+![Admin Login](Admin-panel.png)
+
+
+
+
+
+
+
