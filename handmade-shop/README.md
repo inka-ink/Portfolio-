@@ -1,7 +1,7 @@
 Project in progress.
 ### Handmade Shop — Bestellverwaltung (Admin-Panel)
 
-###Projektstatus:### In Arbeit (In Progress) 
+Projektstatus: In Arbeit (In Progress) 
 
 Dies ist das Administrations-Modul für einen Online-Shop für handgemachte Produkte. Das Projekt wurde mit **React** entwickelt und konzentriert sich aktuell auf die Verwaltung von Kundenbestellungen.
 
