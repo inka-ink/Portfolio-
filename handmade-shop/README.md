@@ -1,5 +1,8 @@
 Project in progress.
 ### Handmade Shop — Bestellverwaltung (Admin-Panel)
+###  Admin Login: test@test.com
+###  Passwort: 123456
+
 
 Projektstatus: In Arbeit (In Progress) 
 
@@ -17,3 +20,5 @@ Dies ist das Administrations-Modul für einen Online-Shop für handgemachte Prod
 
 ---
 **Geplante Updates:** Integration einer Storefront (Schaufenster) für Kunden und Anbindung einer Datenbank.
+![Admin Login](Admin Login..png)
+![Admin Login](Admin panel.png)
