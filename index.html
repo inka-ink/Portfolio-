@@ -56,15 +56,7 @@
   gap: 24px;
 }
 
-.project {
-  background: #1c1c1c;
-  border-radius: 20px;
-  border: 1px solid #444;
-  overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.35);
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
-  cursor: pointer;
-}
+
 
 .project:hover {
   transform: translateY(-8px);
@@ -93,7 +85,7 @@
   transform: scale(1.07);
 }
 
-/* затемнение снизу (дорого выглядит) */
+/* затемнение снизу  */
 .project a::after {
   content: "";
   position: absolute;
@@ -163,10 +155,7 @@
   align-items: center;
 }
 
-.project:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 22px 50px rgba(0,0,0,0.55);
-}
+
 
 .CardOverlay h3 {
   margin: 0;
@@ -177,10 +166,7 @@
 }
 
 
-.project:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.6);
-}
+
 
 .CardContent {
   display: flex;
@@ -212,7 +198,7 @@
   font-size: 0.9rem;
   text-align: center;
    margin: 10;
-  opacity: 0;
+  opacity: 1;
   transition: opacity 0.3s ease;
   z-index: 1;
 }
@@ -276,9 +262,9 @@
   <p data-lang="subtitle">HTML • CSS • JavaScript • Application Development</p>
 </header>
 <nav>
-  <button onclick="setLang('de')" class="active">DE</button>
-  <button onclick="setLang('en')">EN</button>
-  <button onclick="setLang('ru')">RU</button>
+  <button onclick="setLang('de', this)" class="active">DE</button>
+  <button onclick="setLang('en', this)">EN</button>
+  <button onclick="setLang('ru', this)">RU</button>
 </nav>
 <section>
   <div class="card">
@@ -315,6 +301,7 @@ Mein Ziel ist es, als Junior Frontend Developer praktische Erfahrungen zu sammel
   <div class="projects-grid">
 
  <a href="handmade-shop/index.html" class="project" target="_blank">
+  
   <div class="CardContent">
     <span class="CardLinkLabel" data-lang="goto_site"> Zur Website</span>
 
@@ -355,21 +342,67 @@ Mein Ziel ist es, als Junior Frontend Developer praktische Erfahrungen zu sammel
     <h2 data-lang="contact_title">Kontakt:</h2>
     <p>Inna Lobenko</p>
     <p>Email: <a href="mailto:lobenko31@gmail.com">lobenko31@gmail.com</a></p> 
-    <p>GitHub: https://github.com/inka-inkn</p>
-  </div>
+    <p>GitHub: <a href="https://github.com/inka-ink">Profile</a></p>  </div>
 </div>
 
 </section>
 <footer>© 2025 Web Developer Inna Lobenko</footer>
 <script>
   const t = {
-    de:{title:'Junior Frontend Developer',subtitle:'HTML • CSS • JavaScript • Application Development',about_title:'Über mich',about_text:'Ich erstelle seit einiger Zeit eigenständig Websites als persönliche Übungsprojekte. Alle hier gezeigten Websites habe ich alleine entwickelt — von der Planung über Design bis zur Umsetzung. Meine Projekte reichen von der ukrainischen Küche (2020) über russische Rezepte bis hin zu Hand-Made und Make-Up Websites. Mein Ziel ist es, als Junior Frontend Developer praktische Erfahrung zu sammeln, meine Fähigkeiten zu erweitern und in einem professionellen Team zu arbeiten. Ich bin motiviert, schnell zu lernen, kreativ und genau.',skills_title:'Technische Fähigkeiten',projects_title:'Projekte',project1:'Eigenständiges Lernprojekt 2020, bei dem Rezepte und Bilder der ukrainischen Küche online präsentiert wurden. Alles von mir umgesetzt: Design, HTML, CSS, Struktur. Dies war mein erster Projektversuch, daher einfach gestaltet, aber seitdem habe ich mich deutlich verbessert.',project2:'Eigenständiges Projekt für russische Rezepte. Alles selbst gemacht: Layout, Struktur und responsive Design. Zeigt meinen Fortschritt seit 2020.',project3:'Eigenständig erstelltes Online-Portfolio für Hand-Made Produkte. Fokus auf responsive Design, Bildgalerien und Nutzerfreundlichkeit.',project4:'Persönliches Übungsprojekt für eine Kosmetik-Website. Alle Inhalte und das Layout selbst erstellt. Modern und responsive.',contact_title:'Kontakt',  goto_site: 'Zur Website',},
-    en:{title:'Junior Frontend Developer',subtitle:'HTML • CSS • JavaScript • Application Development',about_title:'About Me',about_text:'I have been independently developing websites as personal practice projects. All the websites shown here were created by me alone — from planning to design and implementation. My projects include Ukrainian cuisine (2020), Russian recipes, Hand-Made and Make-Up websites. My goal is to gain practical experience as a Junior Frontend Developer, improve my skills, and work in a professional team. I am motivated, eager to learn quickly, creative, and precise.',skills_title:'Technical Skills',projects_title:'Projects',project1:'Independent learning project from 2020 presenting recipes and images of Ukrainian cuisine online. Everything was done by me: design, HTML, CSS, structure. This was my very first project, so it is quite simple, but since then I have improved significantly.',project2:'Independent project for Russian recipes. Everything done by me: layout, structure, responsive design. Shows my progress since 2020.',project3:'Independently created online portfolio for Hand-Made products. Focus on responsive design, image galleries, and user-friendliness.',project4:'Personal practice project for a cosmetics website. All content and layout created by me. Modern and responsive.',contact_title:'Contact',goto_site: 'Visit website'
- },    
-    ru:{title:'Junior Frontend Developer',subtitle:'HTML • CSS • JavaScript • Разработка ПО',about_title:'Обо мне',about_text:'Я самостоятельно создаю сайты в качестве личных учебных проектов. Все представленные здесь сайты сделаны мной полностью одна — от планирования до дизайна и реализации. Среди проектов: украинская кухня (2020), русские рецепты, Hand-Made и Make-Up сайты. Моя цель — получить практический опыт как Junior Frontend Developer, развивать навыки и работать в профессиональной команде. Я мотивирована, быстро учусь, креативна и внимательна к деталям.',skills_title:'Навыки',projects_title:'Проекты',project1:'Самостоятельный учебный проект 2020 года, где онлайн представлены рецепты и изображения украинской кухни. Всё сделано мной: дизайн, HTML, CSS, структура. Это был мой первый проект, поэтому он достаточно простой, но с тех пор я значительно улучшилась.',project2:'Самостоятельный проект по русским рецептам. Всё сделано мной: макет, структура и адаптивный дизайн. Показывает прогресс с 2020 года.',project3:'Самостоятельно созданное онлайн-портфолио для hand-made изделий. Фокус на адаптивном дизайне, галереях изображений и удобстве для пользователя.',project4:'Личный учебный проект для сайта о косметике. Все содержимое и дизайн созданы мной. Адаптивный и современный.',contact_title:'Контакты', goto_site: 'Перейти на сайт',}
-  };
-  function setLang(lang){document.querySelectorAll('[data-lang]').forEach(el=>{el.textContent=t[lang][el.dataset.lang];});document.querySelectorAll('nav button').forEach(b=>b.classList.remove('active'));event.target.classList.add('active');}
-</script>
+    de:{title:'Junior Frontend Developer',subtitle:'HTML • CSS • JavaScript • Application Development',
+    about_title:'Über mich',
+    about_text:' Ich erstelle seit einiger Zeit eigenständig Webanwendungen als persönliche Übungsprojekte. Alle hier gezeigten Projekte habe ich eigenverantwortlich entwickelt – von der ersten Planung und dem Design bis hin zur technischen Umsetzung. Mein aktueller Fokus liegt auf der modernen Frontend-Entwicklung mit React. In meinem neuesten Projekt, einem „Handmade-Shop“, habe ich bereits ein funktionales Admin-Panel mit CRUD-Funktionen (Erstellen, Lesen und Löschen von Bestellungen) implementiert. Dabei vertiefe ich stetig mein Wissen in React-Hooks und State-Management, um Anwendungen noch dynamischer und benutzerfreundlicher zu gestalten. Mein Ziel ist es, als Junior Frontend Developer praktische Erfahrungen zu sammeln, meine technischen Fähigkeiten in einem professionellen Team einzubringen und mich gemeinsam an anspruchsvollen Projekten weiterzuentwickeln. Ich bin hochmotiviert, lerne extrem schnell und arbeite stets mit einem hohen Anspruch an Kreativität und Präzision.',
+    skills_title:'Technische Fähigkeiten',
+    projects_title:'Projekte',
+    project1:'Project is in development.Login: test@test.com Passwort: 123456',
+    project2:'Project is in development.Login: test@test.com Passwort: 123456',
+    project3:'Eigenständig erstelltes Online-Portfolio für Hand-Made Produkte. Fokus auf responsive Design, Bildgalerien und Nutzerfreundlichkeit.',
+    project4:'Persönliches Übungsprojekt für eine Kosmetik-Website. Alle Inhalte und das Layout selbst erstellt. Modern und responsive.',
+    contact_title:'Kontakt', 
+    goto_site: 'Zur Website',
+    },
+
+  en:{
+  title:'Junior Frontend Developer',
+  subtitle:'HTML • CSS • JavaScript • Application Development',
+  about_title:'About Me',
+  about_text:'I have been independently creating web applications for some time as personal practice projects. All projects shown here were developed entirely by me – from the initial planning and design to the technical implementation. My current focus is modern frontend development with React. In my latest project, a “Handmade-Shop”, I have already implemented a functional admin panel with CRUD functions (creating, reading, and deleting orders). In doing so, I continuously deepen my knowledge of React Hooks and state management in order to make applications more dynamic and user-friendly. My goal is to gain practical experience as a Junior Frontend Developer, to contribute my technical skills in a professional team and to further develop myself together on challenging projects. I am highly motivated, learn extremely quickly and always work with a high level of creativity and precision.',
+  skills_title:'Technical Skills',
+  projects_title:'Projects',
+  project1:'Project is in development. Login: test@test.com Password: 123456',
+  project2:'Project is in development. Login: test@test.com Password: 123456',
+  project3:'Independently created online portfolio for Hand-Made products. Focus on responsive design, image galleries and user-friendliness.',
+  project4:'Personal practice project for a cosmetics website. All content and layout created by me. Modern and responsive.',
+  contact_title:'Contact',
+  goto_site:'Visit website'
+},   
+  ru:{
+  title:'Junior Frontend Developer',
+  subtitle:'HTML • CSS • JavaScript • Разработка приложений',
+  about_title:'Обо мне',
+  about_text:'Я уже некоторое время самостоятельно создаю веб-приложения в рамках личных учебных проектов. Все представленные здесь проекты я реализовала самостоятельно — от первоначального планирования и дизайна до технической реализации. Мой текущий фокус — современная frontend-разработка с использованием React. В своём последнем проекте «Handmade-Shop» я уже реализовала функциональную административную панель с CRUD-функциями (создание, просмотр и удаление заказов). При этом я постоянно углубляю свои знания в React Hooks и управлении состоянием, чтобы делать приложения более динамичными и удобными для пользователя. Моя цель — получить практический опыт в роли Junior Frontend Developer, применять свои технические навыки в профессиональной команде и развиваться, работая над сложными проектами. Я высоко мотивирована, быстро обучаюсь и всегда работаю с высоким уровнем креативности и точности.',
+  skills_title:'Навыки',
+  projects_title:'Проекты',
+  project1:'Проект находится в разработке. Логин: test@test.com Пароль: 123456',
+  project2:'Проект находится в разработке. Логин: test@test.com Пароль: 123456',
+  project3:'Самостоятельно созданное онлайн-портфолио для hand-made изделий. Фокус на адаптивном дизайне, галереях изображений и удобстве пользователя.',
+  project4:'Личный учебный проект сайта о косметике. Все содержимое и дизайн созданы мной. Адаптивный и современный.',
+  contact_title:'Контакты',
+  goto_site:'Перейти на сайт'
+}
+  }
+function setLang(lang, btn){
+  document.querySelectorAll('[data-lang]').forEach(el=>{
+    el.textContent = t[lang][el.dataset.lang];
+  });
+
+  document.querySelectorAll('nav button').forEach(b=>{
+    b.classList.remove('active');
+  });
+
+  btn.classList.add('active');
+}
+
+  </script>
 </body>
 </html>
-
