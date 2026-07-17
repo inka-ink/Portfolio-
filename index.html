@@ -1,945 +1,408 @@
 <!DOCTYPE html>
-<html lang="ru">
-
+<html lang="de">
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="style.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
-  <link
-    href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Fasthand&family=Island+Moments&family=Libre+Baskerville&display=swap"
-    rel="stylesheet" />
-  <link rel="preconnect" href="https://fonts.googleapis.com/css2?family=Comfortaa&family=Lora&display=swap"
-    rel="stylesheet" />
-
-  <title>Всё связано💚</title>
-  <link rel="icon" href="bild/200.png" type="image/x-icon" />
-
-  <style>
-    .language-switch {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      z-index: 9999;
-      background-color: white;
-      padding: 5px 10px;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inna Lobenko | Portfolio Web Developer | Junior Frontend & AE</title>
+<style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: #1c1c1c; /* dunkel, fast schwarz */
+      color: #e0e0e0;
+      line-height: 1.6;
+    }
+    header {
+      padding: 60px 20px;
+      text-align: center;
+      background: #2a2a2a;
+    }
+    header h1 {
+      font-size: 2.4rem;
+      color: #d4af37; /* goldener Akzent */
+      margin-bottom: 10px;
+}
+    header p {
+      font-size: 1.1rem;
+      color: #ccc;
+}
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      padding: 12px;
+      background: #1a1a1a;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+}
+    nav button {
+      background: transparent;
+      border: 1px solid #d4af37;
+      color: #d4af37;
+      padding: 6px 14px;
       border-radius: 8px;
-      box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+cursor: pointer;
+      font-weight: 600;
     }
+    nav button.active, nav button:hover {
+      background: #d4af37;
+      color: #1c1c1c;
+}
 
-    .language-switch img {
-      width: 32px;
-      height: 24px;
-      margin-left: 8px;
-      cursor: pointer;
-      transition: transform 0.2s;
-    }
-
-    .language-switch img:hover {
-      transform: scale(1.1);
-    }
-
-    .language-switch button {
-      padding: 5px 10px;
-      margin-left: 5px;
-      cursor: pointer;
-    }
-
-  </style>
+    .projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
 
 
+
+.project:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 22px 50px rgba(0,0,0,0.55);
+}
+
+/* контейнер картинки */
+.project a {
+  display: block;
+  position: relative;
+  overflow: hidden;
+}
+
+/* сама картинка */
+.project img {
+  object-position: center top;
+  width: 100%;
+  height: 360px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+/* лёгкий зум при наведении */
+.project:hover img {
+  transform: scale(1.07);
+}
+
+/* затемнение снизу  */
+.project a::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0) 45%,
+    rgba(0,0,0,0.65) 100%
+  );
+  pointer-events: none;
+}
+
+.project div {
+  padding: 18px 20px 22px;
+}
+
+.project h3 {
+  margin-bottom: 8px;
+  color: #fff;
+}
+
+.project p {
+  color: #ccc;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+.CardsContainer {
+    margin-top: 50px; /* расстояние от верхнего блока */
+
+}
+.CardOverlay {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0));
+  color: #fff;
+  padding: 15px 12px;
+  box-sizing: border-box;
+}
+
+.CardOverlay h3 {
+  margin: 0 0 6px 0;
+  font-size: 1.1rem;
+}
+
+.CardOverlay p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+.project {
+  position: relative;
+  display: block;
+  width: 280px;
+  height: 460px; /* высота карточки */
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  cursor: pointer;
+  text-decoration: none;
+  color: #d4af37; /* желтый цвет текста */
+  background:  #2a2a2a; /* красивый градиент */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+.CardOverlay h3 {
+  margin: 0;
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #ffd700; /* ярко-жёлтый текст */
+  text-align: center;
+}
+
+
+
+
+.CardContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* название сверху, описание снизу */
+  align-items: center;
+  text-align: center;
+  height: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+
+/* Название всегда видно */
+.CardContent h3 {
+  margin-top: 150px;   /* чтобы всегда сверху */
+  margin-bottom: 0;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #ffd700;
+  text-align: center;
+  z-index: 2;
+}
+
+/* Описание скрыто по умолчанию */
+.CardContent p {
+  color: #fff;
+  font-size: 0.9rem;
+  text-align: center;
+   margin: 10;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+/* Описание появляется при наведении */
+.project:hover .CardContent p {
+  opacity: 1;
+}
+
+.ProjectTitle {
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.ProjectTitle::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0%;
+  height: 2px;
+  background-color: #ffd700; /* желтый цвет */
+  transition: width 0.3s ease;
+}
+
+/* <-- вот эта строка изменена -->
+   раньше было .ProjectTitle:hover::after, теперь .project:hover .ProjectTitle::after */
+.project:hover .ProjectTitle::after {
+  width: 60%; 
+}
+.CardLinkLabel {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.75rem;
+  color: #ffd700; /* желтый */
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  pointer-events: none; /* чтобы не мешало клику */
+}
+
+
+
+
+    section { max-width: 1100px; margin: 50px auto; padding: 0 20px; }
+    a {text-decoration: none;color: #d4af37 ;}
+    .card { background: #2a2a2a; border-radius: 16px; padding: 30px; margin-bottom: 30px; border: 1px solid #444; }
+    h2 { color: #d4af37; margin-bottom: 15px; font-size: 1.8rem; }
+    .skills ul { list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; }
+    .skills li { background: #1c1c1c; padding: 12px; border-radius: 10px; border: 1px solid #444; }
+    footer { text-align: center; padding: 30px 20px; color: #888; font-size: 0.9rem; }
+    @media(max-width:600px){header h1{font-size:1.8rem;}}
+</style>
 </head>
-
-
 <body>
-  <header class="site-header">
-    <div class="site-title-wrapper">
-      <img src="bild/200.png" alt="Logo" class="site-logo">
-      <h1 class="site-title">Всё связано💚</h1>
-    </div>
-    <p class="site-subtitle">
-      <span data-lang="ru">Добро пожаловать на мой сайт!</span>
-      <span data-lang="en" style="display:none;">Welcome to my website!</span>
-      <span data-lang="de" style="display:none;">Willkommen auf meiner Webseite!</span>
-    </p>
-  </header>
+<header>
+  <h1 data-lang="title"> Inna Lobenko | Junior Frontend Developer</h1>
+  <p data-lang="subtitle">HTML • CSS • JavaScript • Application Development</p>
+</header>
+<nav>
+  <button onclick="setLang('de', this)" class="active">DE</button>
+  <button onclick="setLang('en', this)">EN</button>
+  <button onclick="setLang('ru', this)">RU</button>
+</nav>
+<section>
+  <div class="card">
+    <h2 data-lang="about_title">Über mich</h2>
+    <p data-lang="about_text">
+Ich erstelle seit einiger Zeit eigenständig Webanwendungen als persönliche Übungsprojekte. Alle hier gezeigten Projekte habe ich eigenverantwortlich entwickelt – von der ersten Planung und dem Design bis hin zur technischen Umsetzung.
+Mein aktueller Fokus liegt auf der modernen Frontend-Entwicklung mit React. In meinem neuesten Projekt, einem „Handmade-Shop“, habe ich bereits ein funktionales Admin-Panel mit CRUD-Funktionen (Erstellen, Lesen und Löschen von Bestellungen) implementiert. Dabei vertiefe ich stetig mein Wissen in React-Hooks und State-Management, um Anwendungen noch dynamischer und benutzerfreundlicher zu gestalten.
+Mein Ziel ist es, als Junior Frontend Developer praktische Erfahrungen zu sammeln, meine technischen Fähigkeiten in einem professionellen Team einzubringen und mich gemeinsam an anspruchsvollen Projekten weiterzuentwickeln. Ich bin hochmotiviert, lerne extrem schnell und arbeite stets mit einem hohen Anspruch an Kreativität und Präzision.    </p>
+  </div>
+
+  <div class="card skills">
+    <h2 data-lang="skills_title">Technische Fähigkeiten</h2>
+    <ul>
+      <li>HTML5 / CSS3 / Responsive Design</li>
+      <li>Flexbox / Grid Layout</li>
+      <li>JavaScript (DOM, Events)</li>
+      <li>Git & GitHub</li>
+      <li>UX/UI Grundlagen</li>
+      <li>Mehrsprachige Websites (DE / EN / RU)</li>
+      <li>Semantic HTML</li>
+      <li>CSS Animations & Transitions </li>
+      <li>Accessibility Basics (a11y) </li>
+      <li>Project Structuring</li>
+      <li>React.js(Hooks Functional Components)</li>
+      <li>Firebase (Firestore DB, CRUD Operations)</li>
+      <li>JavaScript (ES6+, Fetch API, Async/Await)</li>
+      <li>NPM & Package Management</li>
 
 
-
-
-  <!--button multispache-->
-
-
-  <div class="language-switch">
-    <img src="bild/Russia..png" alt="Русский" onclick="setLanguage('ru')" />
-    <img src="bild/English.png" alt="English" onclick="setLanguage('en')" />
-    <img src="bild/Germany.png" alt="Deutsch" onclick="setLanguage('de')" />
+    </ul>
   </div>
 
 
-  <!-- Мобильный бургер -->
-  <div class="hamburger" onclick="toggleMenu()">☰</div>
+  <div class="projects-grid">
 
-  <!-- Главное меню -->
-  <div class="nav">
-    <a class="nav-item" href="#about me">
-      <span data-lang="ru">О себе</span>
-      <span data-lang="en" style="display:none;">About Me</span>
-      <span data-lang="de" style="display:none;">Über mich</span>
-    </a>
+ <a href="handmade-shop/index.html" class="project" target="_blank">
+  
+  <div class="CardContent">
+    <span class="CardLinkLabel" data-lang="goto_site"> Zur Website</span>
 
-    <a class="nav-item" href="#galery">
-      <span data-lang="ru">Видео</span>
-      <span data-lang="en" style="display:none;">Videos</span>
-      <span data-lang="de" style="display:none;">Videos</span>
-    </a>
-
-    <a class="nav-item" href="#contacts">
-      <span data-lang="ru">Контакты</span>
-      <span data-lang="en" style="display:none;">Contacts</span>
-      <span data-lang="de" style="display:none;">Kontakte</span>
-    </a>
-
-    <div class="nav-item has-submenu">
-      <span data-lang="ru">Работы</span>
-      <span data-lang="en" style="display:none;">Works</span>
-      <span data-lang="de" style="display:none;">Arbeiten</span>
-
-      <ul class="submenu">
-        <li><a href="schapkiiiii.html">
-            <span data-lang="ru">Шапки</span>
-            <span data-lang="en" style="display:none;">Hats</span>
-            <span data-lang="de" style="display:none;">Mützen</span>
-          </a></li>
-        <li><a href="sviter.html">
-            <span data-lang="ru">Свитера</span>
-            <span data-lang="en" style="display:none;">Sweaters</span>
-            <span data-lang="de" style="display:none;">Pullover</span>
-          </a></li>
-        <li><a href="noski.html">
-            <span data-lang="ru">Разное</span>
-            <span data-lang="en" style="display:none;">Various</span>
-            <span data-lang="de" style="display:none;">Verschiedene</span>
-          </a></li>
-      </ul>
-
-
-    </div>
-  </div>
-
-
-
-  <!--
- <p style="text-align: center; margin-top: 10px; color: #666;">
-      <a href="https://instagram.com/anlin.knit?igshid=YmMyMTA2M2Y=" target="_blank" aria-label="Instagram" style="display: inline-block; vertical-align: middle;">
-        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/instagram.svg" alt="Instagram" style="width: 24px; height: 24px; filter: brightness(0) invert(1);">
-      </a>
+    <h3 class="ProjectTitle">Handmade shop</h3>
+    <p data-lang="project1">
+      Project is in development ..login: test@test.com Passwort:123456
     </p>
-
- 
-<a class="nav-item instagram-link" href="https://instagram.com/anlin.knit?igshid=YmMyMTA2M2Y=" target="_blank" rel="noopener noreferrer" class="instagram-link">
-  <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/instagram.svg" alt="Instagram" width="24" height="24" />
+</div>
 </a>
 
--->
-
-  </nav>
-
-  <div class="container">
-    <div class="header-line">
-
-      <!-- Slideschow container -->
-
-      <div class="slideshow-container" id="slideshow">
-        <div class="slide active">
-          <img src="bild/tara-evans-IcvR0jFbsz0-unsplash (1).jpg" alt="Слайд 1" />
-          <div class="slide-text">✨ Хочешь вещь по своим меркам? Напиши мне!</div>
-        </div>
-
-        <div class="slide">
-          <img src="bild/Screenshot_20221107-104434_Instagram.jpg" alt="Слайд 2" />
-          <div class="slide-text">📏 Помогу снять мерки — сделаем это вместе, легко и без стресса.</div>
-        </div>
-
-        <div class="slide">
-          <img src="bild/knitting-4966139_1920.jpg" alt="Слайд 3" />
-          <div class="slide-text">📬 Напиши в WhatsApp, Instagram или через форму ниже.</div>
-        </div>
-
-      </div>
-
-      <div class="dots" id="dots-container">
-        <span class="dot active" data-index="0"></span>
-        <span class="dot" data-index="1"></span>
-        <span class="dot" data-index="2"></span>
-      </div>
-
-
-
-        <!-- PORTFOLIO 
-<section id="portfolio" class="section">
-  <div class="container">
-    <div class="num"></div>
-    <h2 class="section-title">Портфолио</h2>
-
-    <div class="portfolio-grid">
-
-      <a href="schapkiiiii.html" class="portfolio-item">
-        <div class="portfolio-thumb"
-             style="background-image:url('nastya/schapki/Screenshot_20221104-102222_Instagram.jpg')">
-        </div>
-
-        <div class="portfolio-info">
-          <h3>Эксклюзивные вязаные шапки ручной работы.</h3>
-          <p class="muted">
-           Каждая модель создаётся специально для вас с учётом ваших пожеланий. Выбирайте цвет, пряжу и дизайн — я свяжу шапку, которая идеально вам подойдёт.
-          </p>
-        </div>
-      </a>
-
-      <a href="sviter.html" class="portfolio-item">
-        <div class="portfolio-thumb"
-             style="background-image:url('nastya/sviter/Screenshot_20221104-101559_Instagram.jpg')">
-        </div>
-
-        <div class="portfolio-info">
-          <h3>Свитера</h3>
-          <p class="muted">
-            Создаю стильные тёплые свитера ручной работы по индивидуальному заказу.
-          </p>
-        </div>
-      </a>
-
-      <a href="noski.html" class="portfolio-item">
-        <div class="portfolio-thumb"
-             style="background-image:url('nastya/noski/Screenshot_20221107-104710_Instagram.jpg')">
-        </div>
-
-        <div class="portfolio-info">
-          <h3>Разное</h3>
-          <p class="muted">
-            Платки Носки Авоськи..
-          </p>
-        </div>
-      </a>
-
-    </div>
-  </div>
-</section>
--->
-<!-- PORTFOLIO -->
-<section id="portfolio" class="section">
-  <div class="container">
-    <div class="num"></div>
-
-    <h2 class="section-title">
-      <span data-lang="ru">Портфолио</span>
-      <span data-lang="en" style="display:none;">Portfolio</span>
-      <span data-lang="de" style="display:none;">Portfolio</span>
-    </h2>
-
-
-    <div class="portfolio-grid">
-
-      <!-- Hats -->
-      <a href="schapkiiiii.html" class="portfolio-item">
-        <div class="portfolio-thumb"
-             style="background-image:url('nastya/schapki/Screenshot_20221104-102222_Instagram.jpg')">
-        </div>
-
-        <div class="portfolio-info">
-
-          <h3>
-            <span data-lang="ru">Эксклюзивные вязаные шапки ручной работы.</span>
-            <span data-lang="en" style="display:none;">Exclusive handmade knitted hats.</span>
-            <span data-lang="de" style="display:none;">Exklusive handgestrickte Mützen.</span>
-          </h3>
-
-          <p class="muted">
-            <span data-lang="ru">
-              Каждая модель создаётся специально для вас с учётом ваших пожеланий.
-              Выбирайте цвет, пряжу и дизайн — я свяжу шапку, которая идеально вам подойдёт.
-            </span>
-
-            <span data-lang="en" style="display:none;">
-              Each piece is created especially for you according to your wishes.
-              Choose the color, yarn and design — I will knit a hat that fits you perfectly.
-            </span>
-
-            <span data-lang="de" style="display:none;">
-              Jedes Modell wird speziell nach Ihren Wünschen gefertigt.
-              Wählen Sie Farbe, Garn und Design — ich stricke eine Mütze, die perfekt zu Ihnen passt.
-            </span>
-          </p>
-
-        </div>
-      </a>
-
-
-
-      <!-- Sweaters -->
-      <a href="sviter.html" class="portfolio-item">
-        <div class="portfolio-thumb"
-             style="background-image:url('nastya/sviter/Screenshot_20221104-101559_Instagram.jpg')">
-        </div>
-
-        <div class="portfolio-info">
-
-          <h3>
-            <span data-lang="ru">Свитера</span>
-            <span data-lang="en" style="display:none;">Sweaters</span>
-            <span data-lang="de" style="display:none;">Pullover</span>
-          </h3>
-
-
-          <p class="muted">
-
-            <span data-lang="ru">
-              Создаю стильные тёплые свитера ручной работы по индивидуальному заказу.
-            </span>
-
-            <span data-lang="en" style="display:none;">
-              I create stylish warm handmade sweaters made especially for you.
-            </span>
-
-            <span data-lang="de" style="display:none;">
-              Ich fertige stilvolle warme handgestrickte Pullover nach Ihren individuellen Wünschen.
-            </span>
-
-          </p>
-
-        </div>
-      </a>
-
-
-
-
-      <!-- Various -->
-      <a href="noski.html" class="portfolio-item">
-        <div class="portfolio-thumb"
-             style="background-image:url('nastya/noski/Screenshot_20221107-104710_Instagram.jpg')">
-        </div>
-
-        <div class="portfolio-info">
-
-          <h3>
-            <span data-lang="ru">Разное</span>
-            <span data-lang="en" style="display:none;">Various handmade items</span>
-            <span data-lang="de" style="display:none;">Verschiedene Handarbeiten</span>
-          </h3>
-
-
-          <p class="muted">
-
-            <span data-lang="ru">
-              Платки, носки, авоськи и другие уютные изделия ручной работы.
-            </span>
-
-            <span data-lang="en" style="display:none;">
-              Scarves, socks, mesh bags and other cozy handmade creations.
-            </span>
-
-            <span data-lang="de" style="display:none;">
-              Schals, Socken, Einkaufsnetze und andere gemütliche handgefertigte Produkte.
-            </span>
-
-          </p>
-
-        </div>
-      </a>
-
-
-    </div>
-  </div>
-</section>
-
-      <!-- a sebe -->
-
-
-      <div class="about">
-        <section id="about me">
-        <img src="bild/foto.jpeg" alt="Inna" class="about-photo" />
-        <a class="section-title">
-          <span data-lang="ru">О себе:</span>
-          <span data-lang="en" style="display: none;">About me</span>
-          <span data-lang="de" style="display: none;">Über mich</span>
-        </a>
-        <p class="about-text">
-          <span data-lang="ru">
-            Меня зовут Настя, я создаю уютные и уникальные вязаные вещи ручной работы.
-            Каждое изделие я делаю с душой и любовью, чтобы оно радовало вас и согревало.
-            Вяжу для девушек и частично для детей. А
-            именно: плечевые изделия (свитера и кардиганы); различные
-            головные уборы; носки; варежки; авоськи; майки/топы. Доставка из
-            солнечного Крыма. Изделия с особой энергетикой, напитанные южным
-            солнцем и морским воздухом.
-          </span>
-          <span data-lang="en" style="display: none;">
-            My name is Nastya, and I create cozy and unique handmade knitted items.
-            Every piece is made with soul and love to bring you joy and warmth.
-            I knit for women and partly for children.
-            Specifically: shoulder garments (sweaters and cardigans), various hats, socks, mittens, mesh bags, and tops.
-            Shipping from sunny Crimea.
-            Each item carries a special energy — infused with southern sunshine and sea breeze.
-
-          </span>
-          <span data-lang="de" style="display: none;">
-            Ich heiße Nastya und fertige gemütliche und einzigartige handgestrickte Stücke.
-            Jedes Produkt wird mit Herz und Liebe gemacht, um Ihnen Freude und Wärme zu schenken.
-            Ich stricke für Frauen und teilweise auch für Kinder.
-            Genauer gesagt: Oberbekleidung (Pullover und Cardigans), verschiedene Mützen, Socken, Fäustlinge,
-            Einkaufsnetze sowie Tops.
-            Der Versand erfolgt aus dem sonnigen Krim.
-            Jedes Stück ist durchdrungen von besonderer Energie – aufgeladen mit der Sonne und der Meeresluft des
-            Südens.
-          </span>
-        </p>
-         
-      </div>
- </section>
-
-
-      <!-- Video -->
-      <section id="galery">
-        <div class="container">
-          <div class="galery-title">
-            <span data-lang="ru">Видео:</span>
-            <span data-lang="en" style="display:none;">Videos</span>
-            <span data-lang="de" style="display:none;">Videos</span>
-            <p class="about-text">
-              <span data-lang="ru">Посмотрите, как создаются изделия...</span>
-              <span data-lang="en" style="display: none;">Watch how the items are made</span>
-              <span data-lang="de" style="display: none;">Sehen Sie, wie die Produkte entstehen</span>
-            </p>
-          </div>
-          <hr />
-          <div class="video-wrapper">
-            <video class="video-block" src="nastya/vidio/InShot_20211228_132411860.mp4" controls>
-            </video>
-
-
-            <video class="video-block" src="nastya/vidio/InShot_20221102_133040494.mp4" controls>
-            </video>
-
-            <video class="video-block" src="nastya/vidio/VID_20221028_151716.mp4" controls>
-            </video>
-          </div>
-        </div>
-      </section>
-
-      <!-- # -->
-      <!-- Как заказать -->
-      <div class="about">
-        <section id="contacts">
-        <a class="section-title">
-          <span data-lang="ru">Как заказать?</span>
-          <span data-lang="en" style="display: none;">How to order</span>
-          <span data-lang="de" style="display: none;">So bestellen Sie</span>
-        </a>
-
-        <p class="about-text">
-          <span data-lang="ru">
-            Все изделия вяжутся на заказ. Выберите модель, цвет, размер и длину изделия (например: Switer #13, размер
-            S,M..).
-            Затем свяжитесь со мной через WhatsApp, телефон или E-Mail, и я свяжусь с вами для уточнения деталей.
-            Я помогу подобрать пряжу, размер, расскажу о сроках и стоимости.
-            После подтверждения заказа начнётся работа.
-            <a href="#" onclick="openModal('measurementsModal')"
-              style="text-decoration: underline; color: #419a74; cursor: pointer;">
-              Как снять мерки без стресса?
-            </a>
-
-          </span>
-          <span data-lang="en" style="display: none;">
-            To place an order, choose an item from the gallery or contact me via email, WhatsApp, or phone.
-            Specify what you want (e.g., color, size, material), and I will get in touch to clarify details.
-            <a href="#" onclick="openModal('measurementsModal')"
-              style="text-decoration: underline; color: #419a74; cursor: pointer;">
-              How to take your measurements?
-            </a>
-
-          </span>
-          <span data-lang="de" style="display: none;">
-            Um zu bestellen, wählen Sie ein Produkt aus der Galerie oder schreiben Sie mir per E-Mail, WhatsApp oder
-            Telefon.
-            Geben Sie an, was Sie möchten (z. B. Farbe, Größe, Material), und ich werde mich bei Ihnen melden.
-            <a href="#" onclick="openModal('measurementsModal')"
-              style="text-decoration: underline; color: #419a74; cursor: pointer;">
-              Wie nimmt man Maße ohne Stress?
-            </a>
-
-          </span>
-
-        </p>
-          
-      </div>
-</section>
-
-      <section class="order-form">
-        <h2 class="section-title" data-lang="ru">Заказать изделие</h2>
-        <h2 class="section-title" data-lang="en">Order a product</h2>
-        <h2 class="section-title" data-lang="de">Produkt bestellen</h2>
-
-        <form action="https://formspree.io/f/mblkognr" method="POST">
-          <label>
-            <span data-lang="ru">Изделие</span>
-            <span data-lang="en">Product</span>
-            <span data-lang="de">Produkt</span>
-            <textarea name="comments" rows="2"></textarea>
-          </label>
-
-          <label>
-            <span data-lang="ru">Размер</span>
-            <span data-lang="en">Size</span>
-            <span data-lang="de">Größe</span>
-            <select name="size" required>
-              <option value="">-- выбрать --</option>
-              <option value="S">S (36-38)</option>
-              <option value="M">M (39-41)</option>
-              <option value="L">L (42-44)</option>
-            </select>
-          </label>
-
-
-
-          <label>
-            <span data-lang="ru">Цвет</span>
-            <span data-lang="en">Color</span>
-            <span data-lang="de">Farbe</span>
-            <textarea name="comments" rows="1"></textarea>
-          </label>
-
-          <label>
-            <span data-lang="ru">Количество</span>
-            <span data-lang="en">Quantity</span>
-            <span data-lang="de">Anzahl</span>
-            <input type="number" name="quantity" min="1" value="1" required />
-          </label>
-
-          <label>
-            <span data-lang="ru">Пожелания</span>
-            <span data-lang="en">Comments</span>
-            <span data-lang="de">Wünsche</span>
-            <textarea name="comments" rows="3"></textarea>
-          </label>
-
-          <label>
-            <span data-lang="ru">Ваш Email</span>
-            <span data-lang="en">Your Email</span>
-            <span data-lang="de">Ihre E-Mail</span>
-            <input type="email" name="email" required />
-          </label>
-<!-- Галочка согласия -->
-<div class="consent">
-  <label class="text-ru">
-    <input type="checkbox" required>
-    Я согласен(а) на обработку персональных данных
-  </label>
-  <label class="text-de" style="display:none;">
-    <input type="checkbox" required>
-    Ich stimme der Verarbeitung meiner personenbezogenen Daten zu
-  </label>
+<a href="Vse-svyazano/index.html" class="project" target="_blank">
+  <div class="CardContent">
+    <span class="CardLinkLabel" data-lang="goto_site"> Zur Website</span>
+
+    <h3 class="ProjectTitle">Hand-Made Website</h3>
+    <p data-lang="project3">
+      Eigenständig erstelltes Online-Portfolio für Hand-Made Produkte mit Fokus auf Responsive Design.
+    </p>
 </div>
-          <button type="submit">
-            <span data-lang="ru">Отправить заказ</span>
-            <span data-lang="en">Send Order</span>
-            <span data-lang="de">Bestellung absenden</span>
-          </button>
-        </form>
-      </section>
+</a>
+
+<a href="make app 3/index.html" class="project" target="_blank">
+  <div class="CardContent">
+    <span class="CardLinkLabel" data-lang="goto_site"> Zur Website</span>
+
+    <h3 class="ProjectTitle">Make-Up Website</h3>
+    <p data-lang="project4">
+      Persönliches Übungsprojekt für eine moderne und responsive Kosmetik-Website.
+   </p>
+  </div>
+</a>
 
 
-      <footer class="footer">
-        <div class="footer-content">
-          <p class="footer-address" style="font-size: 14px; margin-top: 10px;">
-            <span data-lang="ru">Изделия создаются вручную с любовью в Крыму<span
-                style="color: #368264;">&#10084;</span></span>
-            <span data-lang="en" style="display: none;">All items are handmade with love in Crimea<span
-                style="color: #368264;">&#10084;</span></span>
-            <span data-lang="de" style="display: none;">Alle Produkte werden liebevoll von Hand auf der Krim
-              gefertigt<span style="color: #368264;">&#10084;</span></span>
-          </p>
-
-
-          <!-- Ссылки -->
-          <div class="footer-links" style="text-align: center; margin-top: 20px;">
-            <a onclick="openModal('impressum')">Impressum</a> |
-            <a onclick="openModal('datenschutz')">Datenschutz</a> |
-            <a onclick="openModal('nutzungsbedingungen')">Nutzungsbedingungen</a>
-          </div>
-
-          <div class="footer-contacts">
-            <a href="tel:79133795894" class="call-link" aria-label="Позвонить">
-              <span data-lang="ru">Позвонить</span>
-              <span data-lang="en" style="display:none;">Call</span>
-              <span data-lang="de" style="display:none;">Anrufen</span>
-            </a>
-            <a href="https://instagram.com/anlin.knit?igshid=YmMyMTA2M2Y=" target="_blank" aria-label="Instagram"
-              class="instagram-link">
-              <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/instagram.svg" alt="Instagram">
-            </a>
-          </div>
-
-
-          <!--
-<div class="call-button-footer">
-  <a href="tel:+49123456789" class="call-link" aria-label="Позвонить">
-     <span data-lang="ru">Позвонить</span>
-    <span data-lang="en" style="display:none;">Call</span>
-    <span data-lang="de" style="display:none;">Anrufen</span>
-  </a>
 </div>
 
- <p style="text-align: center; margin-top: 10px; color: #666;">
-      <a href="https://instagram.com/anlin.knit?igshid=YmMyMTA2M2Y=" target="_blank" aria-label="Instagram" style="display: inline-block; vertical-align: middle;">
-        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/instagram.svg" alt="Instagram" style="width: 24px; height: 24px; filter: brightness(0) invert(1);">
-      </a>
-    </p>-->
-          <!-- Источники фото -->
-          <p style="font-size: 13px; text-align: center; margin-top: 15px; color: #666;">
-            Фото:
-            <a href="https://pixabay.com/photos/knitting-yarn-wool-craft-4966139/" target="_blank"
-              rel="noopener noreferrer">Ylanite Koppens / Pixabay</a>,
-            <a href="https://unsplash.com/photos/IcvR0jFbsz0" target="_blank" rel="noopener noreferrer">Tara Evans /
-              Unsplash</a>
-          </p>
+    <div class="CardsContainer">   
+  <div class="card">
+    <h2 data-lang="contact_title">Kontakt:</h2>
+    <p>Inna Lobenko</p>
+    <p>Email: <a href="mailto:lobenko31@gmail.com">lobenko31@gmail.com</a></p> 
+    <p>GitHub: <a href="https://github.com/inka-ink">Profile</a></p>  </div>
+</div>
 
-          <!-- Иконка Instagram с ссылкой -->
+</section>
+<footer>© 2025 Web Developer Inna Lobenko</footer>
+<script>
+  const t = {
+    de:{title:'Junior Frontend Developer',subtitle:'HTML • CSS • JavaScript • Application Development',
+    about_title:'Über mich',
+    about_text:' Ich erstelle seit einiger Zeit eigenständig Webanwendungen als persönliche Übungsprojekte. Alle hier gezeigten Projekte habe ich eigenverantwortlich entwickelt – von der ersten Planung und dem Design bis hin zur technischen Umsetzung. Mein aktueller Fokus liegt auf der modernen Frontend-Entwicklung mit React. In meinem neuesten Projekt, einem „Handmade-Shop“, habe ich bereits ein funktionales Admin-Panel mit CRUD-Funktionen (Erstellen, Lesen und Löschen von Bestellungen) implementiert. Dabei vertiefe ich stetig mein Wissen in React-Hooks und State-Management, um Anwendungen noch dynamischer und benutzerfreundlicher zu gestalten. Mein Ziel ist es, als Junior Frontend Developer praktische Erfahrungen zu sammeln, meine technischen Fähigkeiten in einem professionellen Team einzubringen und mich gemeinsam an anspruchsvollen Projekten weiterzuentwickeln. Ich bin hochmotiviert, lerne extrem schnell und arbeite stets mit einem hohen Anspruch an Kreativität und Präzision.',
+    skills_title:'Technische Fähigkeiten',
+    projects_title:'Projekte',
+    project1:'Project is in development.Login: test@test.com Passwort: 123456',
+    project2:'Project is in development.Login: test@test.com Passwort: 123456',
+    project3:'Eigenständig erstelltes Online-Portfolio für Hand-Made Produkte. Fokus auf responsive Design, Bildgalerien und Nutzerfreundlichkeit.',
+    project4:'Persönliches Übungsprojekt für eine Kosmetik-Website. Alle Inhalte und das Layout selbst erstellt. Modern und responsive.',
+    contact_title:'Kontakt', 
+    goto_site: 'Zur Website',
+    },
 
+  en:{
+  title:'Junior Frontend Developer',
+  subtitle:'HTML • CSS • JavaScript • Application Development',
+  about_title:'About Me',
+  about_text:'I have been independently creating web applications for some time as personal practice projects. All projects shown here were developed entirely by me – from the initial planning and design to the technical implementation. My current focus is modern frontend development with React. In my latest project, a “Handmade-Shop”, I have already implemented a functional admin panel with CRUD functions (creating, reading, and deleting orders). In doing so, I continuously deepen my knowledge of React Hooks and state management in order to make applications more dynamic and user-friendly. My goal is to gain practical experience as a Junior Frontend Developer, to contribute my technical skills in a professional team and to further develop myself together on challenging projects. I am highly motivated, learn extremely quickly and always work with a high level of creativity and precision.',
+  skills_title:'Technical Skills',
+  projects_title:'Projects',
+  project1:'Project is in development. Login: test@test.com Password: 123456',
+  project2:'Project is in development. Login: test@test.com Password: 123456',
+  project3:'Independently created online portfolio for Hand-Made products. Focus on responsive design, image galleries and user-friendliness.',
+  project4:'Personal practice project for a cosmetics website. All content and layout created by me. Modern and responsive.',
+  contact_title:'Contact',
+  goto_site:'Visit website'
+},   
+  ru:{
+  title:'Junior Frontend Developer',
+  subtitle:'HTML • CSS • JavaScript • Разработка приложений',
+  about_title:'Обо мне',
+  about_text:'Я уже некоторое время самостоятельно создаю веб-приложения в рамках личных учебных проектов. Все представленные здесь проекты я реализовала самостоятельно — от первоначального планирования и дизайна до технической реализации. Мой текущий фокус — современная frontend-разработка с использованием React. В своём последнем проекте «Handmade-Shop» я уже реализовала функциональную административную панель с CRUD-функциями (создание, просмотр и удаление заказов). При этом я постоянно углубляю свои знания в React Hooks и управлении состоянием, чтобы делать приложения более динамичными и удобными для пользователя. Моя цель — получить практический опыт в роли Junior Frontend Developer, применять свои технические навыки в профессиональной команде и развиваться, работая над сложными проектами. Я высоко мотивирована, быстро обучаюсь и всегда работаю с высоким уровнем креативности и точности.',
+  skills_title:'Навыки',
+  projects_title:'Проекты',
+  project1:'Проект находится в разработке. Логин: test@test.com Пароль: 123456',
+  project2:'Проект находится в разработке. Логин: test@test.com Пароль: 123456',
+  project3:'Самостоятельно созданное онлайн-портфолио для hand-made изделий. Фокус на адаптивном дизайне, галереях изображений и удобстве пользователя.',
+  project4:'Личный учебный проект сайта о косметике. Все содержимое и дизайн созданы мной. Адаптивный и современный.',
+  contact_title:'Контакты',
+  goto_site:'Перейти на сайт'
+}
+  }
+function setLang(lang, btn){
+  document.querySelectorAll('[data-lang]').forEach(el=>{
+    el.textContent = t[lang][el.dataset.lang];
+  });
 
-          <p class="footer-copy" style="margin-top: 10px;">© Всё связано💚</p>
-        </div>
-      </footer>
-    </div>
-    </footer>
+  document.querySelectorAll('nav button').forEach(b=>{
+    b.classList.remove('active');
+  });
 
+  btn.classList.add('active');
+}
 
-
-    <a href="https://wa.me/79133795894" class="whatsapp-button" target="_blank">
-      <img src="bild/whatsapp.svg" alt="WhatsApp" width="40" height="40" />
-    </a>
-
-
-
-
-
-    <!-- ===== МОДАЛЬНЫЕ ОКНА ===== -->
-
-
-    <!-- Impressum -->
-    <div id="impressum" class="modal">
-      <div class="modal-content">
-        <span class="close" onclick="closeModal('impressum')">&times;</span>
-        <div data-lang="ru">
-          <h2>Impressum</h2>
-          <p><strong>Информация согласно § 5 TMG:</strong></p>
-          <p>Anlin Knit (псевдоним)<br>Частное лицо<br>Крым, Россия</p>
-          <p><strong>Контакт:</strong><br>Через форму на сайте</p>
-          <p><strong>Этот сайт размещён на платформе GitHub Pages (github.com)</strong></p>
-        </div>
-        <div data-lang="en" style="display:none;">
-          <h2>Impressum</h2>
-          <p><strong>Information according to § 5 TMG:</strong></p>
-          <p>Anlin Knit (pseudonym)<br>Private person<br>Crimea, Russia</p>
-          <p><strong>Contact:</strong><br>Via the contact form</p>
-          <p><strong>This website is hosted via GitHub Pages (github.com)</strong></p>
-        </div>
-        <div data-lang="de" style="display:none;">
-          <h2>Impressum</h2>
-          <p><strong>Angaben gemäß § 5 TMG:</strong></p>
-          <p>Anlin Knit (Pseudonym)<br>Privatperson<br>Krim, Russland</p>
-          <p><strong>Kontakt:</strong><br>Über das Kontaktformular</p>
-          <p><strong>Diese Webseite wird auf GitHub Pages (github.com) gehostet</strong></p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Datenschutz -->
-    <div id="datenschutz" class="modal">
-      <div class="modal-content">
-        <span class="close" onclick="closeModal('datenschutz')">&times;</span>
-        <div data-lang="ru">
-          <h2>Политика конфиденциальности</h2>
-          <p>Этот сайт не собирает персональные данные автоматически.</p>
-          <p>Связь через E-Mail происходит через платформу Formspree.io (США). Сервис обеспечивает защищённую передачу
-            данных. Информация не сохраняется на сайте.</p>
-        </div>
-        <div data-lang="en" style="display:none;">
-          <h2>Privacy Policy</h2>
-          <p>This website does not collect personal data automatically.</p>
-          <p>Email communication is processed via Formspree.io (USA). This service ensures secure form submissions. No
-            data is stored on this website.</p>
-        </div>
-        <div data-lang="de" style="display:none;">
-          <h2>Datenschutzerklärung</h2>
-          <p>Diese Website erhebt keine personenbezogenen Daten automatisch.</p>
-          <p>Die E-Mail-Kommunikation erfolgt über Formspree.io (USA). Diese Plattform bietet ein sicheres
-            Formularsystem. Es werden keine Daten dauerhaft gespeichert.</p>
-        </div>
-      </div>
-    </div>
-
-
-
-    <!-- Добавка в MODAL NUTZUNGSBEDINGUNGEN -->
-    <div id="nutzungsbedingungen" class="modal">
-      <div class="modal-content">
-        <span class="close" onclick="closeModal('nutzungsbedingungen')">&times;</span>
-        <div data-lang="ru">
-          <h2>Условия использования</h2>
-          <p>Все материалы на сайте защищены авторским правом.</p>
-          <p>Все изделия изготавливаются по индивидуальному заказу и не подлежат возврату.</p>
-          <p><strong>Отказ от ответственности:</strong> Вся информация на сайте носит информационный характер.Я не
-            гарантирую абсолютную точность или полноту данных. Изделия изготавливаются вручную по индивидуальному заказу
-            и не подлежат возврату или обмену.</p>
-        </div>
-        <div data-lang="en" style="display:none;">
-          <h2>Terms of Use</h2>
-          <p>All content on this site is protected by copyright.</p>
-          <p>All products are custom-made and non-returnable.</p>
-          <p><strong>Disclaimer:</strong> All content is for informational purposes only. I do not guarantee its
-            accuracy or completeness. All items are handmade to order and are not eligible for return or exchange.</p>
-        </div>
-        <div data-lang="de" style="display:none;">
-          <h2>Nutzungsbedingungen</h2>
-          <p>Alle Inhalte dieser Website sind urheberrechtlich geschützt.</p>
-          <p>Alle Produkte werden individuell auf Anfrage gefertigt und sind vom Umtausch ausgeschlossen.</p>
-          <p><strong>Haftungsausschluss:</strong> Die Inhalte dieser Website dienen ausschließlich der allgemeinen
-            Information. Ich übernehme keine Gewähr für die Richtigkeit oder Vollständigkeit. Alle Produkte werden
-            individuell gefertigt und sind vom Umtausch oder Rückgabe ausgeschlossen.</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- ===== СТИЛИ МОДАЛОК ===== -->
-
-
-    <script>
-      function openModal(id) {
-        document.getElementById(id).style.display = 'block';
-      }
-      function closeModal(id) {
-        document.getElementById(id).style.display = 'none';
-      }
-      function setLang(lang) {
-        document.querySelectorAll('[data-lang]').forEach(el => {
-          el.style.display = el.getAttribute('data-lang') === lang ? 'block' : 'none';
-        });
-      }
-      window.onclick = function (event) {
-        document.querySelectorAll('.modal').forEach(modal => {
-          if (event.target == modal) modal.style.display = "none";
-        });
-      }
-    </script>
-
-    <div class="modal" id="measurementsModal">
-      <div class="modal-content">
-        <span class="close" onclick="closeModal('measurementsModal')">&times;</span>
-
-        <div data-lang="ru">
-          <h3>Как снять мерки без стресса</h3>
-          <p>Не переживайте — всё просто!</p>
-          <ul>
-            <li>Можно измерить себя по любимой одежде (например, свитер или шапка).</li>
-            <li>Или прислать фото и описание — я помогу.</li>
-            <li>Если что — обсудим всё в чате, шаг за шагом.</li>
-          </ul>
-          <p>Я всегда на связи 💌</p>
-        </div>
-
-        <div data-lang="en" style="display:none;">
-          <h3>How to take your measurements — stress-free</h3>
-          <p>Don’t worry — it’s easy!</p>
-          <ul>
-            <li>You can use your favorite sweater or hat as a reference.</li>
-            <li>Or send me a photo and a short description — I’ll help you.</li>
-            <li>If needed, we’ll discuss it step by step via chat.</li>
-          </ul>
-          <p>I’m always here to help 💌</p>
-        </div>
-
-        <div data-lang="de" style="display:none;">
-          <h3>Maße stressfrei nehmen – so geht's</h3>
-          <p>Keine Sorge — es ist ganz einfach!</p>
-          <ul>
-            <li>Nutze dein Lieblingsstück (z. B. Pullover oder Mütze) als Vorlage.</li>
-            <li>Oder schicke mir ein Foto und Beschreibung — ich helfe dir.</li>
-            <li>Bei Bedarf besprechen wir alles Schritt für Schritt im Chat.</li>
-          </ul>
-          <p>Ich bin immer für dich da 💌</p>
-        </div>
-      </div>
-    </div>
-    <script>
-      function openModal(id) {
-        document.getElementById(id).style.display = "block";
-      }
-      function closeModal(id) {
-        document.getElementById(id).style.display = "none";
-      }
-    </script>
-
-    <script>
-      function toggleMenu() {
-        const nav = document.getElementById('navMenu');
-        nav.classList.toggle('open');
-      }
-
-      document.querySelectorAll('.nav-item').forEach(item => {
-        item.addEventListener('click', () => {
-          const nav = document.getElementById('navMenu');
-          nav.classList.remove('open');
-        });
-      });
-
-
-
-    </script>
-
-
-    <script>
-      const slides = document.querySelectorAll('.slide');
-      const dots = document.querySelectorAll('.dot');
-      let currentIndex = 0;
-      const slideInterval = 3000; // 3 секунды
-
-      function showSlide(index) {
-        // Скрыть все слайды
-        slides.forEach(slide => slide.classList.remove('active'));
-        dots.forEach(dot => dot.classList.remove('active'));
-
-        // Показать выбранный
-        slides[index].classList.add('active');
-        dots[index].classList.add('active');
-        currentIndex = index;
-      }
-
-      function nextSlide() {
-        let nextIndex = (currentIndex + 1) % slides.length;
-        showSlide(nextIndex);
-      }
-
-      // Автоматическая смена слайда каждые 3 секунды
-      let timer = setInterval(nextSlide, slideInterval);
-
-      // Если нажать на точку — переключить слайд и сбросить таймер
-      dots.forEach(dot => {
-        dot.addEventListener('click', () => {
-          clearInterval(timer);
-          showSlide(parseInt(dot.dataset.index));
-          timer = setInterval(nextSlide, slideInterval);
-        });
-      });
-    </script>
-
-    <script>
-      function setLanguage(lang) {
-        // Скрыть все языки
-        document.querySelectorAll('[data-lang]').forEach(el => {
-          el.style.display = 'none';
-        });
-
-        // Показать только выбранный
-        document.querySelectorAll(`[data-lang="${lang}"]`).forEach(el => {
-          el.style.display = 'inline';
-        });
-
-        // Сохранить язык
-        localStorage.setItem('selectedLang', lang);
-      }
-
-      // При загрузке — применить язык из памяти или установить русский
-      document.addEventListener('DOMContentLoaded', () => {
-        const lang = localStorage.getItem('selectedLang') || 'ru';
-        setLanguage(lang);
-      });
-    </script>
-
-
-    <script>
-      // Прыжок при клике на "О себе"
-      document.querySelectorAll('.nav-item[href="#cards"]').forEach(item => {
-        item.addEventListener('click', function () {
-          item.classList.add('jump-on-click');
-          setTimeout(() => {
-            item.classList.remove('jump-on-click');
-          }, 500);
-        });
-      });
-
-      // Прыжок при клике на пункт "Работы"
-      const workButton = document.querySelector('.dropbtn');
-      if (workButton) {
-        workButton.addEventListener('click', function () {
-          workButton.classList.add('jump-on-click');
-          setTimeout(() => {
-            workButton.classList.remove('jump-on-click');
-          }, 500);
-        });
-      }
-    </script>
-
-    <!--Закрыть мобильное меню при клике на пункт-->
-    <script>
-      document.addEventListener('DOMContentLoaded', () => {
-        const nav = document.querySelector('.nav');
-        const hamburger = document.querySelector('.hamburger');
-        const navItems = document.querySelectorAll('.nav-item');
-        const submenus = document.querySelectorAll('.has-submenu');
-
-        // Показать/скрыть мобильное меню
-        hamburger.addEventListener('click', () => {
-          nav.classList.toggle('show');
-        });
-
-        // Закрыть меню при клике на пункт (кроме .has-submenu)
-        navItems.forEach(item => {
-          item.addEventListener('click', (e) => {
-            if (item.classList.contains('has-submenu')) {
-              // ничего не делать — submenu откроется отдельно
-              return;
-            }
-            if (window.innerWidth <= 768) {
-              nav.classList.remove('show');
-              submenus.forEach(s => s.classList.remove('open'));
-            }
-          });
-        });
-
-
-        // Открыть/закрыть подменю по клику
-        submenus.forEach(item => {
-          item.addEventListener('click', e => {
-            e.stopPropagation();
-            item.classList.toggle('open');
-          });
-        });
-
-        // Клик вне — закрыть подменю
-        document.addEventListener('click', () => {
-          submenus.forEach(item => item.classList.remove('open'));
-        });
-      });
-    </script>
-
-
-
-
+  </script>
 </body>
-
-
 </html>
-
-
-
-
-
-
-
-
-
-
